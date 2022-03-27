@@ -1,4 +1,3 @@
-# raphbag.github.io
-Pour accéder au site :
-
+Site
+========
 https://raphbag.github.io/
