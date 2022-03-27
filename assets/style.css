@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    box-shadow: 0px 2px 30px rgba(36, 36, 172, 0.322);
+}
+
+header h1 {
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+}
