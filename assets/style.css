@@ -16,3 +16,10 @@ header h1 {
 main {
     flex-grow: 1;
 }
+
+#scrollUp {
+position: fixed;
+bottom : 10px;
+right: -100px;
+opacity: 0.5;
+}
