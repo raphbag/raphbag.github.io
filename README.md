@@ -1,3 +1,2 @@
-Site
-========
+# Site
 https://raphbag.github.io/
