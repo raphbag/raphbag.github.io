@@ -38,6 +38,15 @@ header a {
     color: white;
 }
 
+header a:hover {
+    background-color: rgb(65, 65, 65);
+    box-shadow: 2px 2px 5px rgb(190, 190, 190);
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+
 header h1 {
     text-align: center;
     width: 100%;
