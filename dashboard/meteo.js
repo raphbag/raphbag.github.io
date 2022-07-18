@@ -18,7 +18,8 @@ var callBackGetSuccess = function(data) {
     var imgelement = document.getElementById("img_meteo");
     imgelement.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
     var element = document.getElementById("vitesse_vent");
-    element.innerHTML = data.wind.speed + " km/h";
+    element.innerHTML = Math.round((data.wind.speed * 3.6) * 100) / 100 + " km/h";
+    // element.innerHTML = data.wind.speed * 3.6 + " km/h"
     var element = document.getElementById("city");
     element.innerHTML = data.name;
 }

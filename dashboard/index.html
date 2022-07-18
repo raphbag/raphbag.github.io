@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="icon" type="image/svg" sizes="16x16" href="../assets/icon.svg">
     <title>Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="meteo.js"></script>
 </head>
 
-<body onload="buttonClickGET()">
+<body onload="buttonClickGET()"  class="background">
     <header>
         <a href="/">
             <img src="../assets/icon.svg" alt="Icons" height="100px">
@@ -20,16 +21,17 @@
             <a href="../dashboard/" class="dashboard">Mon dashboard</a>
         </nav>
     </header>
-    <main class="background">
+    <main>
         <h1>Dashboard</h1>
         
 
 
         <div class="box-dashboard">
-            <div id="city" class="box1"><img id="img_meteo" width="80"></div>
+            <div id="city" class="box1"></div>
+            <img id="img_meteo" class="box1">
             <div id="zone_meteo" class="box1"></div>
             <div id="vitesse_vent" class="box1"></div>
-            <iframe src="https://horloge.maree.frbateaux.net/ws115" id="marree" class="box1" frameborder="0"
+            <iframe src="https://horloge.maree.frbateaux.net/ws115" id="marree" class="box1" frameborder="0" 
             scrolling="no"><a href="http://maree.info/" target="_top" rel="dofollow">Calendrier des marées - horaire,
                 hauteur, coefficient de marée</a></iframe>
         </div>
