@@ -83,6 +83,7 @@ main h1 {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .box section p {
@@ -97,7 +98,7 @@ footer {
 /* Page Dashboard */
 
 .background {
-    background-image: url("../dashboard/background.JPG");
+    background-image: url("../dashboard/IMG_8451.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }

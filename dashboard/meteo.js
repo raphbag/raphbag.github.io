@@ -1,5 +1,5 @@
 function buttonClickGET() {
-    var url = "https://api.openweathermap.org/data/2.5/weather?q=Le Pouliguen,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric&lang=fr"
+    var url = "https://api.openweathermap.org/data/2.5/weather?q=Le%20Pouliguen,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric&lang=fr"
 
     $.get(url, callBackGetSuccess).done(function() {
         //alert( "second success" );
