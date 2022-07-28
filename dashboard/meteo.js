@@ -23,4 +23,3 @@ var callBackGetSuccess = function(data) {
     var element = document.getElementById("city");
     element.innerHTML = data.name;
 }
-
