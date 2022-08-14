@@ -138,5 +138,17 @@ footer {
 }
 
 #video {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#webcam {
+    width: 120px;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgb(0,216,255);
+    background: linear-gradient(90deg, rgba(0,216,255,1) 0%, rgba(0,66,194,1) 100%);
+    color: white;
 }
