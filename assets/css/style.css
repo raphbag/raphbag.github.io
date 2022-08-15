@@ -156,14 +156,7 @@ footer {
     border-radius: 3px;
     background: rgba(57, 10, 175, 0.683);
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
     
-}
-
-.btn-box img {
-    height: 35.33px;
 }
 
 #video {
