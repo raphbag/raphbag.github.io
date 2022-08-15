@@ -26,19 +26,25 @@
         <h1>Dashboard</h1>
         
 
-
-        <div class="box-dashboard">
-            <div id="city" class="box1"></div>
-            <img id="img_meteo" class="box1">
-            <div id="zone_meteo" class="box1"></div>
-            <div id="vitesse_vent" class="box1"></div>
-            <!-- <div id="sea_temp" class="box1"></div> -->
-            <iframe src="https://horloge.maree.frbateaux.net/ws115" id="maree" class="box1" frameborder="0" 
-            scrolling="no"><a href="http://maree.info/" target="_top" rel="dofollow">Calendrier des marées - horaire,
-                hauteur, coefficient de marée</a></iframe>
+        <div class="flex">
+            <div class="meteo-box">
+                <div id="city" class="box1"></div>
+                <img id="img_meteo" class="box1">
+                <div id="zone_meteo" class="box1"></div>
+                <div id="vitesse_vent" class="box1"></div>
+                <!-- <div id="sea_temp" class="box1"></div> -->
+                <iframe src="https://horloge.maree.frbateaux.net/ws115" id="maree" class="box1" frameborder="0" 
+                scrolling="no"><a href="http://maree.info/" target="_top" rel="dofollow">Calendrier des marées - horaire,
+                    hauteur, coefficient de marée</a></iframe>
+            </div>
+            <div class="btn-box">
+                <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a>
+                <!-- <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a>
+                <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a> -->
+            </div>
         </div>
         <iframe id="video" src="http://www.youtube.com/embed/WeMYILLPyZA?enablejsapi=1&origin=https://raphbag.github.io" frameborder="0" width="640" height="360" allowfullscreen="true"></iframe>
-        <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a> 
+    </main>
     <footer>
         © Raphaël 2022, Inc.
     </footer>

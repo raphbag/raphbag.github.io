@@ -104,12 +104,25 @@ footer {
     background-attachment: fixed;
 }
 
-.box-dashboard {
-    width: 350px;
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.meteo-box {
+    width: 300px;
     height: 350px;
     display: flex;
     flex-wrap: wrap;
 }
+
+.btn-box {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
 .box1 {
     width: 150px;
     height: 100px;
@@ -137,18 +150,25 @@ footer {
     height: 200px;
 }
 
+#webcam {
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 3px;
+    background: rgba(57, 10, 175, 0.683);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    
+}
+
+.btn-box img {
+    height: 35.33px;
+}
+
 #video {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#webcam {
-    width: 120px;
-    text-decoration: none;
-    text-align: center;
-    padding: 15px 20px;
-    border-radius: 10px;
-    background: rgb(0,216,255);
-    background: linear-gradient(90deg, rgba(0,216,255,1) 0%, rgba(0,66,194,1) 100%);
-    color: white;
-}
+
