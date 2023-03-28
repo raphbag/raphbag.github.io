@@ -22,6 +22,13 @@ header > a {
     background: rgb(213, 213, 213)
 }
 
+header h1 {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-shadow: rgb(0, 134, 223) 20px 15px 5px;
+}
+
 header nav {
     display: flex;
     align-items: center;
@@ -37,6 +44,8 @@ header nav a {
     font-size: 15px;
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
 }
 
 header nav a:hover {
@@ -48,9 +57,8 @@ header nav a:hover {
     transition: 0.5s ease-in-out;
 }
 
-header h1 {
-    text-align: center;
-    width: 100%;
+header nav a span {
+    margin-right: 10px;
 }
 
 main {
