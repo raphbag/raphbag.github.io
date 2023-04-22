@@ -46,6 +46,7 @@ header nav a {
     color: white;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 header nav a:hover {
