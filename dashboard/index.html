@@ -6,27 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="icon" type="image/svg" sizes="16x16" href="../assets/icon.svg">
+    <link rel="icon" type="image/svg" sizes="16x16" href="/assets/images/icon.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Dashboard</title>
+    <script defer src="/assets/js/import-header.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="meteo.js"></script>
-    <script defer src="sea.js"></script>
+    <script defer src="/assets/js/meteo.js"></script>
 </head>
 
 <body onload="buttonClickGET()"  class="background">
-    <header>
-        <a href="/">
-            <img src="../assets/icon.svg" alt="Icons" height="100px">
-        </a>
-        <h1>Dashboard</h1>
-        <nav>
-            <a href="../dashboard">
-                <span class="material-symbols-outlined">dataset</span>
-                Mon Dashboard
-            </a>
-        </nav>
-    </header>
+    <div id="header"></div>
     <main>
         <div class="flex">
             <div class="meteo-box">
@@ -45,7 +34,7 @@
                 <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a> -->
             </div>
         </div>
-        <iframe id="video" src="https://www.youtube.com/embed/4Fqs9_X5skw?enablejsapi=1&origin=https://raphbag.github.io" frameborder="0" width="640" height="360" allowfullscreen="true"></iframe>
+        <iframe id="video" src="https://www.youtube.com/embed/4Fqs9_X5skw?enablejsapi=1&origin=https://raphbag.github.io" frameborder="0" width="640" height="360" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </main>
     <footer>
         © Raphaël 2023, Inc.
