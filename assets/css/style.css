@@ -28,7 +28,16 @@ header h1 {
     display: flex;
     align-items: center;
     padding: 15px 20px;
-    text-shadow: rgb(0, 134, 223) 20px 15px 5px;
+    text-shadow: rgb(0, 134, 223) 20px 15px 5px;         
+}
+
+header a img:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+header a img:active {
+    filter: invert(80%);
 }
 
 header nav {
@@ -105,6 +114,7 @@ main h1 {
 
 footer {
     text-align: center;
+    color: rgba(100, 100, 100, 0.5);
 }
 
 /* Page Dashboard */
@@ -169,6 +179,11 @@ footer {
     background: rgba(57, 10, 175, 0.683);
     color: white;
     
+}
+
+#webcam:hover {
+    background: rgba(0, 15, 151, 0.788);
+    transition: 0.5s ease-in-out;
 }
 
 #video {
