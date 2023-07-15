@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" type="image/svg" sizes="16x16" href="/assets/images/icon.svg">
@@ -13,8 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="/assets/js/meteo.js"></script>
 </head>
-
-<body onload="buttonClickGET()"  class="background">
+<body onload="buttonClickGET()" class="background">
     <div id="header"></div>
     <main>
         <div class="flex">
@@ -24,21 +21,19 @@
                 <div id="zone_meteo" class="box1"></div>
                 <div id="vitesse_vent" class="box1"></div>
                 <!-- <div id="sea_temp" class="box1"></div> -->
-                <iframe src="https://horloge.maree.frbateaux.net/ws115" id="maree" class="box1" frameborder="0" 
-                scrolling="no"><a href="http://maree.info/" target="_top" rel="dofollow">Calendrier des marées - horaire,
-                    hauteur, coefficient de marée</a></iframe>
+                <script src="https://services.data.shom.fr/hdm/vignette/petite/LE_POULIGUEN?locale=fr"></script>
             </div>
             <div class="btn-box">
                 <a href="https://broadcast.viewsurf.com/c6c6106a58a26a91088d97a31957dc56/capture/16690/playEmbed?options[media_user]=labaule" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a>
                 <!-- <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a>
                 <a href="https://pv.viewsurf.com/1568/Le-Pouliguen?i=NjE1ODo" target="_blank" rel="Ouvrir dans un nouvelle onglet" id="webcam">Webcam Le Pouliguen</a> -->
             </div>
+            <iframe id="video" src="https://www.youtube.com/embed/4Fqs9_X5skw?rel=0&color=white&iv_load_policy=3&enablejsapi=1&origin=https://raphbag.me" frameborder="0" width="534" height="300" color="white" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <iframe id="video" src="https://www.youtube.com/embed/4Fqs9_X5skw?enablejsapi=1&origin=https://raphbag.github.io" frameborder="0" width="640" height="360" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </main>
     <footer>
         © Raphaël 2023, Inc.
     </footer>
 </body>
-
+<script> document.getElementById("page-title").innerText = "Titre de la page 1";</script>
 </html>

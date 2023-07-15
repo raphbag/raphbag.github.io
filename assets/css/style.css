@@ -48,7 +48,7 @@ header nav {
 header nav a {
     background-color: gray;
     border: none;
-    padding: 15px 20px;
+    padding: 10px 15px;
     margin: 10px;
     text-align: center;
     border-radius: 7px;
@@ -70,7 +70,7 @@ header nav a:hover {
 }
 
 header nav a span {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 main {
@@ -134,9 +134,10 @@ footer {
 
 .meteo-box {
     width: 300px;
-    height: 350px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .btn-box {
@@ -159,6 +160,7 @@ footer {
 #city {
     width: 250px;
     height: 50px;
+    font-weight: bold;
     background-color: rgba(211, 211, 211, 0.75);
 }
 
@@ -167,9 +169,8 @@ footer {
     height: 50px;
 }
 
-#maree {
-    width: 300px;
-    height: 200px;
+#img_meteo:hover {
+    background-color: rgb(80, 80, 80);
 }
 
 #webcam {
@@ -178,17 +179,14 @@ footer {
     border-radius: 3px;
     background: rgba(57, 10, 175, 0.683);
     color: white;
-    
 }
 
-#webcam:hover {
-    background: rgba(0, 15, 151, 0.788);
-    transition: 0.5s ease-in-out;
+#webcam:hover{
+    background: rgba(116, 116, 116, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.683);
+    transition: 0.3s ease-in;
 }
 
 #video {
-    margin-top: 20px;
     margin-bottom: 20px;
 }
-
-
