@@ -10,17 +10,17 @@
     <script defer src="/assets/js/import-header.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="/assets/js/meteo.js"></script>
+    <script defer src="/assets/js/meteov2.js"></script>
 </head>
-<body onload="buttonClickGET()" class="background">
+<body onload="buttonClickGET(); buttonClickGETV2()" class="background">
     <div id="header"></div>
     <main>
         <div class="flex">
             <div class="meteo-box">
                 <div id="city" class="box1"></div>
                 <img id="img_meteo" class="box1">
-                <div id="zone_meteo" class="box1"></div>
-                <div id="vitesse_vent" class="box1"></div>
-                <!-- <div id="sea_temp" class="box1"></div> -->
+                <div id="temperature" class="box1"></div>
+                <div id="wind_speed" class="box1"></div>
                 <script src="https://services.data.shom.fr/hdm/vignette/petite/LE_POULIGUEN?locale=fr"></script>
             </div>
             <div class="btn-box">
@@ -35,5 +35,4 @@
         © Raphaël 2023, Inc.
     </footer>
 </body>
-<script> document.getElementById("page-title").innerText = "Titre de la page 1";</script>
 </html>
