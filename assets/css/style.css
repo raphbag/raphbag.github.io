@@ -190,3 +190,28 @@ footer {
 #video {
     margin-bottom: 20px;
 }
+
+/* Page Galerie */
+
+.galerie_title {
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Comic Neue', cursive;
+}
+
+.fa {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-rows: 160px 160px;
+    gap: 30px;
+}
+
+.fa_box {
+    height: 170px;
+}
+
+/* agrandir une image au clic et rétrécir au prochain clic */
+.fa img:active {
+    transform: scale(1.5);
+}
+
