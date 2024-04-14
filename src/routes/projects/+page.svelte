@@ -1,1 +1,3 @@
-<h1>Mes projets</h1>
+<main>
+	<h1>Mes projets</h1>
+</main>
