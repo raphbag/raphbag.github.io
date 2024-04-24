@@ -12,7 +12,7 @@
 	<!-- <div>
 		Hello {name}!
 	</div> -->
-	<img src="../../logo.png" alt="Logo R du site" />
+	<img src="/logo.png" alt="Logo R du site" />
 	<nav>
 		{#each links as link}
 			<a href={link.href}>{link.text}</a>

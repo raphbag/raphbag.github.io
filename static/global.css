@@ -2,10 +2,12 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 0px;
 }
 
 main {
 	max-width: 1600px;
 	margin: 0 auto;
 	padding: 0px 20px;
+	min-height: 80vh;
 }
