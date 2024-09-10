@@ -1,8 +1,14 @@
 <script>
+	import { onMount } from 'svelte';
+
+	let currentYear;
+	onMount(() => {
+		currentYear = new Date().getFullYear();
+	});
 </script>
 
 <footer>
-	<p>© 2024</p>
+	<p>&copy; {currentYear}</p>
 	<a href="https://github.com/raphbag">
 		<img src="/github.svg" width="26px " alt="Icon Github" />
 	</a>
