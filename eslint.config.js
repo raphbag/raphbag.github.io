@@ -16,4 +16,12 @@ export default [
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   skipFormatting,
+
+  {
+    rules: {
+      'no-unused-vars': 'warn',
+      'vue/no-undef-components': 'error',
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 ]
