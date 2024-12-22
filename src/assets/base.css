@@ -18,7 +18,17 @@
 }
 
 body {
-  min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  font-family: 'Open Sans', sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
