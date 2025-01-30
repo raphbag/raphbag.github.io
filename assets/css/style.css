@@ -178,7 +178,9 @@ footer {
     text-decoration: none;
     border-radius: 3px;
     background: rgba(57, 10, 175, 0.683);
+    border: 1px solid rgba(57, 10, 175, 0);
     color: white;
+    transition: 0.3s ease-out;
 }
 
 #webcam:hover{
