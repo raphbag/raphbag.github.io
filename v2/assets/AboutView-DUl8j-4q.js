@@ -1,0 +1,1 @@
+import{_ as a,c as n,a as o,o as t}from"./index-DVmgTjsb.js";const s={};function r(c,e){return t(),n("main",null,e[0]||(e[0]=[o("h1",null,"This is an about page",-1)]))}const i=a(s,[["render",r]]);export{i as default};
