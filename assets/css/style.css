@@ -40,8 +40,8 @@ header a img:active {
     filter: invert(80%);
 }
 
-header nav {
-    display: flex;
+header > nav {
+    display: none;
     align-items: center;
 }
 
@@ -72,6 +72,59 @@ header nav a:hover {
 header nav a span {
     margin-right: 5px;
 }
+
+/* Navigation mobile */
+
+#burger {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+    z-index: 1000;
+}
+
+#burger:hover {
+    color: rgb(88, 88, 88);
+    transition: 0.2s ease-in-out;
+}
+
+.opacity {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 500;
+}
+
+.mobile_nav {
+    position: fixed;
+    top: 0px;
+    right: -250px;
+    background-color: white;
+    width: auto;
+    height: auto;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+@media screen and (min-width: 600px){
+    .mobile {
+        display: none;
+    }
+
+    header > nav {
+        display: flex;
+    }
+}
+
+/* Pages */
 
 main {
     flex-grow: 1;
@@ -212,7 +265,13 @@ footer {
     height: 170px;
 }
 
-/* agrandir une image au clic et rétrécir au prochain clic */
+.fa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+}
+
 .fa img:active {
     transform: scale(1.5);
 }
