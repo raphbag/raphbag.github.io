@@ -3,6 +3,9 @@
     <footer>
       <p>© {{ new Date().getFullYear() }}</p>
       <a href="https://github.com/raphbag" target="_blank">
+        <img src="/src/assets/linkedin.svg" width="26px" alt="Icon LinkedIn" />
+      </a>
+      <a href="???" target="_blank">
         <img src="/src/assets/github.svg" width="26px " alt="Icon Github" />
       </a>
     </footer>
@@ -23,7 +26,7 @@ footer {
   height: 50px;
 }
 
-p {
-  margin-right: 10px;
+img {
+  margin-left: 10px;
 }
 </style>

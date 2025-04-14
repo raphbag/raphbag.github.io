@@ -36,7 +36,7 @@ nav > a:hover {
 }
 
 .active {
-  text-decoration: underline;
+  text-decoration: underline rgba(255, 255, 255, 0.8);
 }
 
 img {
