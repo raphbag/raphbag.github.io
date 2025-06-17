@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router'
       </RouterLink>
       <nav>
         <RouterLink to="/" active-class="active">Home</RouterLink>
-        <RouterLink to="/about" active-class="active">About</RouterLink>
+        <RouterLink to="/projets" active-class="active">Projets</RouterLink>
       </nav>
     </header>
   </div>
@@ -40,7 +40,7 @@ nav > a:hover {
 }
 
 img {
-  padding: 0px 10px;
+  padding: 0px 20px;
   border-right: 2px dotted gray;
 }
 </style>
