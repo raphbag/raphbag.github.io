@@ -6,6 +6,11 @@ on:
       - vue  # Déploie quand tu pousses sur vue
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,12 +33,23 @@ jobs:
 
       - name: Build project
         run: npm run build
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
 
       # ⚙️ Étape spécifique à Vite : si tu utilises Vite, le build est dans "dist/"
       # ⚙️ Étape spécifique à Vue CLI : le build est dans "dist/" aussi par défaut
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
