@@ -4,7 +4,7 @@
   <main>
     <section class="hero">
       <h1 class="hero__title">Hi, I'm Raphaël</h1>
-      <h2 class="hero__subtitle">Je m'entraine à développer des applications web</h2>
+      <h2 class="hero__subtitle">Je suis passionné par l'informatique et les nouvelles technologies.<br/> Je suis actuellement étudiant en cybersécurité.</h2>
     </section>
     <section class="competences">
       <h2>Mes compétences</h2>
@@ -66,7 +66,7 @@
 }
 
 .hero__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: center;
   margin: 0;
   font-weight: 300;
