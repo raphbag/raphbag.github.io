@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - vue  # Déploie quand tu pousses sur vue
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +18,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18  # Compatible avec Vue 3/Vite
-
+          
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        
       - name: Install dependencies
         run: npm install
 
@@ -28,7 +33,7 @@ jobs:
       # ⚙️ Étape spécifique à Vue CLI : le build est dans "dist/" aussi par défaut
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
