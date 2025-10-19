@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: ./dist
 
       # ⚙️ Étape spécifique à Vite : si tu utilises Vite, le build est dans "dist/"
       # ⚙️ Étape spécifique à Vue CLI : le build est dans "dist/" aussi par défaut
