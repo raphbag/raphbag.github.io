@@ -1,0 +1,34 @@
+name: Deploy Vue.js app to GitHub Pages
+
+on:
+  push:
+    branches:
+      - vue  # Déploie quand tu pousses sur vue
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Compatible avec Vue 3/Vite
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # ⚙️ Étape spécifique à Vite : si tu utilises Vite, le build est dans "dist/"
+      # ⚙️ Étape spécifique à Vue CLI : le build est dans "dist/" aussi par défaut
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
