@@ -87,9 +87,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 1.5rem;
   gap: 1rem;
-  background: linear-gradient(145deg, var(--vt-c-black), #161616);
 }
 
 .container img {
