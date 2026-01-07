@@ -13,10 +13,44 @@ const projets = [
       {
         src: "https://github.com/raphbag/IoT-Home-Weather-Station/raw/main/.github/dashboard.jpg",
         alt: "Dashboard du projet IoT"
-      }
+      }     
     ],
     description: "Projet IoT de surveillance de la température et de l'humidité dans maison, utilisant un ESP32, un capteur DHT22 et la communication MQTT.",
-    github: "https://github.com/raphbag/IoT-Home-Weather-Station"
+    liens: [
+      {
+        url: "https://github.com/raphbag/IoT-Home-Weather-Station",
+        label: "Github",
+        icon: "/src/assets/github.svg",
+        newTab: true
+      }
+    ],
+    type: "ESME"
+  },
+  {
+    id: 2,
+    titre: "WEB - Maquette Omnifood",
+    images: [
+      {
+        src: "https://github.com/raphbag/maquette-omnifood/raw/master/.github/preview-omnifood-raphbag.png",
+        alt: "Aperçu de ma version de Omnifood"
+      }
+    ],
+    description: "Refonte de la maquette Omnifood (omnifood.dev) en utilisant HTML et CSS pour créer un site web responsive et attrayant.",
+    liens: [
+      {
+        url: "https://github.com/raphbag/maquette-omnifood",
+        label: "Github",
+        icon: "/src/assets/github.svg",
+        newTab: true
+      },
+      {
+        url: "./maquette-omnifood",
+        label: "Site",
+        icon: "https://github.com/raphbag/maquette-omnifood/raw/master/assets/images/icon.png",
+        newTab: false
+      }
+    ],
+    type: "ESME"
   }
 ]
 
@@ -46,11 +80,21 @@ onMounted(() => {
           </div>
           <p>{{ projet.description }}</p>
           <div class="bottom">
-            <a :href="projet.github" target="_blank">
-              <img src="/src/assets/github.svg" width="26px" alt="Icon Github" />Github
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d6d6d6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg>
-            </a>
-            <span><img src="@/assets/Esme-sudria-logo.png" alt="Logo ESME Sudria"/> ESME</span>
+            <div class="liens">
+              <a v-for="lien in projet.liens" :key="lien.url" :href="lien.url" :target="lien.newTab ? '_blank' : '_self'">
+                <img :src="lien.icon" width="26px" :alt="`Icon ${lien.label}`" />
+                {{ lien.label }}
+                <svg v-if="lien.newTab" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d6d6d6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg>
+              </a>
+            </div>
+            <span v-if="projet.type === 'ESME'">
+              <img src="@/assets/Esme-sudria-logo.png" alt="Logo ESME Sudria"/> ESME
+            </span>
+            <span v-else-if="projet.type === 'Perso'" class="perso">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Perso
+            </span>
+            <span v-else class="autre">{{ projet.type }}</span>
           </div>
         </div>
       </TransitionGroup>
@@ -70,7 +114,6 @@ main {
   align-items: center;
   justify-content: center;
   padding: 15px;
-  gap: 10px;
 }
 
 .projet {
@@ -86,6 +129,7 @@ main {
   border-radius: 15px;
   transition: all 0.3s ease;
   max-width: 1000px;
+  margin-bottom: 10px;
   /* background: linear-gradient(145deg, var(--vt-c-black), #161616); */
 }
 
@@ -116,18 +160,31 @@ h2:hover {
 
 .projet .images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 0;
+  justify-items: center;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  gap: 15px;
+  padding: 20px;
 }
 
-  .projet img {
-    border-radius: 5px;
-    max-width: 100%;
-    height: 100%;
+@media (max-width: 768px) {
+  .projet .images {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
+}
+
+.projet .images img {
+  border-radius: 5px;
+  width: auto;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
 .projet a {
   display: flex;
@@ -143,9 +200,10 @@ h2:hover {
 }
 
 .projet a:hover {
+  flex-wrap: wrap;
+  gap: 10px;
   background-color: #797979;
-  color: #242424;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;  
 }
 
 .bottom {
@@ -153,6 +211,14 @@ h2:hover {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-top: 10px;
+}
+
+.liens {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 span {
