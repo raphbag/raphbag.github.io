@@ -20,7 +20,7 @@ const projets = [
       {
         url: "https://github.com/raphbag/IoT-Home-Weather-Station",
         label: "Github",
-        icon: "/src/assets/github.svg",
+        icon: "/github.svg",
         newTab: true
       }
     ],
@@ -40,7 +40,7 @@ const projets = [
       {
         url: "https://github.com/raphbag/maquette-omnifood",
         label: "Github",
-        icon: "/src/assets/github.svg",
+        icon: "/github.svg",
         newTab: true
       },
       {
