@@ -44,10 +44,10 @@ const projets = [
         newTab: true
       },
       {
-        url: "./maquette-omnifood",
+        url: "https://raphbag.github.io/maquette-omnifood",
         label: "Site",
         icon: "https://github.com/raphbag/maquette-omnifood/raw/master/assets/images/icon.png",
-        newTab: false
+        newTab: true
       }
     ],
     type: "ESME"

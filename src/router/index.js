@@ -1,5 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createWebHashHistory, createRouter } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
+import ProjetView from '@/views/ProjectView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -12,15 +14,12 @@ const router = createRouter({
     {
       path: '/projets',
       name: 'projets',
-      // route level code-splitting
-      // this generates a separate chunk (Project.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ProjectView.vue'),
+      component: ProjetView,
     },
     {
       path: '/:catchAll(.*)',
       name: 'NotFound',
-      component: () => import('../views/NotFoundView.vue'),
+      component: NotFoundView,
     }
   ],
 })
