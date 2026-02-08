@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Compatible avec Vue 3/Vite
+          node-version: 24  # Compatible avec Vue 3/Vite
           
       - name: Setup Pages
         id: pages
