@@ -47,19 +47,52 @@ const projets = [
       },
       {
         url: 'https://raphbag.github.io/maquette-omnifood',
-        label: 'Site',
+        label: 'Ma version',
         icon: 'https://github.com/raphbag/maquette-omnifood/raw/master/assets/images/icon.png',
         newTab: true,
       },
     ],
     type: 'ESME',
   },
+  {
+    id: 3,
+    titre: 'WEB - Webtrain',
+    images: [
+      {
+        src: 'https://github.com/raphbag/webtrain/raw/master/.github/overview_webtrain.png',
+        alt: 'Aperçu du site Webtrain',
+      },
+      {
+        src: 'https://github.com/raphbag/webtrain/raw/master/.github/overview_horaires.png',
+        alt: 'Aperçu de la page horaires du site Webtrain',
+      }
+    ],
+    description:
+      'Webtrain est un projet personnel visant à créer une application web pour consulter les horaires de train en Ile de france, en utilisant les données de l\'API d\'Ile de France mobilité et en développant une interface utilisateur moderne et responsive.',
+    liens: [
+      {
+        url: 'https://github.com/raphbag/webtrain',
+        label: 'Github',
+        icon: '/github.svg',
+        newTab: true,
+      },
+      {
+        url: 'https://webtrain.raphbag.workers.dev/',
+        label: 'Webtrain',
+        icon: 'https://github.com/raphbag/webtrain/raw/master/public/favicon.svg',
+        newTab: true,
+      },
+    ],
+    type: 'Perso',
+  },
 ]
 
 const visibleProjets = ref([])
 
 onMounted(() => {
-  projets.forEach((projet, idx) => {
+  const projetsTries = [...projets].sort((a, b) => b.id - a.id)
+  
+  projetsTries.forEach((projet, idx) => {
     setTimeout(() => {
       visibleProjets.value.push(projet)
     }, idx * 250) // 250ms entre chaque projet
@@ -196,30 +229,36 @@ h2:hover {
 
 .projet .images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   align-items: center;
   justify-items: center;
-  width: calc(100% + 40px);
-  margin-left: -20px;
-  margin-right: -20px;
   gap: 15px;
-  padding: 20px;
+  width: 100%;
+  padding: 15px 0;
 }
 
 @media (max-width: 768px) {
   .projet .images {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 15px;
   }
 }
 
 .projet .images img {
-  border-radius: 5px;
+  border-radius: 8px;
   width: auto;
   max-width: 100%;
-  max-height: 300px;
+  height: auto;
+  max-height: 400px;
   object-fit: contain;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projet .images img:hover {
+  box-shadow: 0 8px 25px #313133;
 }
 
 .projet a {
