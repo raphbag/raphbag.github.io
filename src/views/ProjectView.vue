@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import cyberImage from '@/assets/Typo-Projet-cyber.png'
 
 const projets = [
   {
@@ -65,10 +66,10 @@ const projets = [
       {
         src: 'https://github.com/raphbag/webtrain/raw/master/.github/overview_horaires.png',
         alt: 'Aperçu de la page horaires du site Webtrain',
-      }
+      },
     ],
     description:
-      'Webtrain est un projet personnel visant à créer une application web pour consulter les horaires de train en Ile de france, en utilisant les données de l\'API d\'Ile de France mobilité et en développant une interface utilisateur moderne et responsive.',
+      "Webtrain est un projet personnel visant à créer une application web pour consulter les horaires de train en Ile de france, en utilisant les données de l'API d'Ile de France mobilité et en développant une interface utilisateur moderne et responsive.",
     liens: [
       {
         url: 'https://github.com/raphbag/webtrain',
@@ -85,13 +86,26 @@ const projets = [
     ],
     type: 'Perso',
   },
+  {
+    id: 4,
+    titre: "Réseau - Sécurisation Offensive et Défensive d'un réseau privé LAN",
+    images: [
+      {
+        src: cyberImage,
+        alt: 'Aperçu du la typologie réseau du projet de cybersécurité',
+      },
+    ],
+    description:
+      "En cours... Ce projet vise à évaluer et renforcer la résilience d'une infrastructure virtuelle via des tests d'intrusion sous Kali Linux, ciblant les vulnérabilités réseau et applicatives (MITM, injection SQL). L'objectif est de sécuriser les données sensibles incluant un audit technique, le déploiement de contre-mesures et le développement de solutions de chiffrement.",
+    type: 'ESME',
+  },
 ]
 
 const visibleProjets = ref([])
 
 onMounted(() => {
   const projetsTries = [...projets].sort((a, b) => b.id - a.id)
-  
+
   projetsTries.forEach((projet, idx) => {
     setTimeout(() => {
       visibleProjets.value.push(projet)
@@ -252,7 +266,7 @@ h2:hover {
   max-height: 400px;
   object-fit: contain;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: 
+  transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
