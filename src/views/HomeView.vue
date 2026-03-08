@@ -3,20 +3,26 @@ const competences = [
   {
     name: 'HTML5',
     type: 'language',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/1024px-HTML5_Badge.svg.png?20110131171049',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg',
     link: 'https://developer.mozilla.org/fr/docs/Web/HTML',
   },
   {
     name: 'CSS3',
     type: 'language',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1920px-CSS3_logo.svg.png',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg',
     link: 'https://developer.mozilla.org/fr/docs/Web/CSS',
   },
   {
     name: 'Python',
     type: 'language',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/archive/c/c3/20220821155028%21Python-logo-notext.svg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg',
     link: 'https://www.python.org/',
+  },
+  {
+    name: 'Java',
+    type: 'language',
+    img: 'https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg',
+    link: 'https://www.java.com/fr/',
   },
   {
     name: 'Cisco Packet Tracer',
