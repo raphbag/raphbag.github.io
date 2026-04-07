@@ -5,10 +5,10 @@ import { RouterLink } from 'vue-router'
 <template>
   <div>
     <header>
-      <RouterLink to="/">
-        <img alt="Logo RB" class="logo" src="/logo.svg" height="50" />
+      <RouterLink to="/" aria-label="Accueil - Raphael Baguelin">
+        <img alt="" aria-hidden="true" class="logo" src="/logo.svg" height="50"/>
       </RouterLink>
-      <nav>
+      <nav aria-label="Navigation principale">
         <RouterLink to="/" active-class="active">Home</RouterLink>
         <RouterLink to="/projets" active-class="active">Projets</RouterLink>
       </nav>

@@ -1,12 +1,22 @@
 <template>
   <div>
     <footer>
-      <p>© {{ new Date().getFullYear() }}</p>
-      <a href="https://www.linkedin.com/in/raphael-baguelin" target="_blank">
-        <img src="/linkedin.svg" width="26px" alt="Icon LinkedIn" />
+      <p>© {{ new Date().getFullYear() }} Raphael Baguelin</p>
+      <a
+        href="https://www.linkedin.com/in/raphael-baguelin"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Profil LinkedIn de Raphael Baguelin"
+      >
+        <img src="/linkedin.svg" width="26" height="26" alt="" aria-hidden="true" />
       </a>
-      <a href="https://github.com/raphbag" target="_blank">
-        <img src="/github.svg" width="26px " alt="Icon Github" />
+      <a
+        href="https://github.com/raphbag"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Profil GitHub de Raphael Baguelin"
+      >
+        <img src="/github.svg" width="26" height="26" alt="" aria-hidden="true" />
       </a>
     </footer>
   </div>

@@ -1,4 +1,21 @@
 <script setup>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const emailCopied = ref(false)
+
+const copyEmail = async () => {
+  try {
+    await navigator.clipboard.writeText('baguelinraphael@gmail.com')
+    emailCopied.value = true
+    setTimeout(() => {
+      emailCopied.value = false
+    }, 2000)
+  } catch (err) {
+    console.error('Erreur lors de la copie:', err)
+  }
+}
+
 const competences = [
   {
     name: 'HTML5',
@@ -83,81 +100,143 @@ const competences = [
 
 <template>
   <main>
-    <section class="hero">
-      <h1 class="hero__title">Hi, I'm Raphaël</h1>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero__title">Raphael Baguelin</h1>
       <h2 class="hero__subtitle">
-        Je suis passionné par l'informatique et les nouvelles technologies.<br />
-        Je suis actuellement étudiant en cybersécurité.
+        Etudiant en cybersécurité passionné par l'informatique et les nouvelles technologies.
       </h2>
+      <p class="hero__objective">
+        Je recherche actuellement une alternance en cybersécurité / réseau.
+      </p>
+      <div class="hero__actions">
+        <RouterLink to="/projets" class="hero__cta hero__cta--primary">Voir mes projets</RouterLink>
+        <a
+          href="https://www.linkedin.com/in/raphael-baguelin/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BATSQ6lFjQ6qTg7Q78ccMPA%3D%3D"
+          class="hero__cta hero__cta--secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Me contacter
+        </a>
+      </div>
     </section>
-    <section class="competences">
-      <h1>Mes compétences</h1>
+    <section class="competences" aria-labelledby="competences-title">
+      <h1 id="competences-title">Mes compétences</h1>
       <h2>Langages</h2>
-      <div class="container">
+      <div class="container" role="list">
         <a
           v-for="competence in competences.filter((c) => c.type === 'language')"
           :key="competence.name"
           :href="competence.link"
           target="_blank"
           rel="noopener noreferrer"
+          role="listitem"
+          :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
           <img
-            :key="competence.name"
             :src="competence.img"
-            :alt="`Logo ${competence.name}`"
-            :title="competence.name"
+            :alt="competence.name"
+            loading="lazy"
           />
         </a>
       </div>
       <h2>Outils</h2>
-      <div class="container">
+      <div class="container" role="list">
         <a
           v-for="competence in competences.filter((c) => c.type === 'tool')"
           :key="competence.name"
           :href="competence.link"
           target="_blank"
           rel="noopener noreferrer"
+          role="listitem"
+          :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
           <img
-            :key="competence.name"
             :src="competence.img"
-            :alt="`Logo ${competence.name}`"
-            :title="competence.name"
+            :alt="competence.name"
+            loading="lazy"
           />
         </a>
       </div>
       <h2>Cloud</h2>
-      <div class="container">
+      <div class="container" role="list">
         <a
           v-for="competence in competences.filter((c) => c.type === 'cloud')"
           :key="competence.name"
           :href="competence.link"
           target="_blank"
           rel="noopener noreferrer"
+          role="listitem"
+          :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
           <img
-            :key="competence.name"
             :src="competence.img"
-            :alt="`Logo ${competence.name}`"
-            :title="competence.name"
+            :alt="competence.name"
+            loading="lazy"
           />
         </a>
       </div>
       <h2>Systèmes d'exploitation</h2>
-      <div class="container">
+      <div class="container" role="list">
         <a
           v-for="competence in competences.filter((c) => c.type === 'os')"
           :key="competence.name"
           :href="competence.link"
           target="_blank"
           rel="noopener noreferrer"
+          role="listitem"
+          :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
           <img
-            :key="competence.name"
             :src="competence.img"
-            :alt="`Logo ${competence.name}`"
-            :title="competence.name"
+            :alt="competence.name"
+            loading="lazy"
           />
+        </a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <h1 id="contact-title">Me contacter</h1>
+      <p class="contact__intro">
+        Une opportunité d'alternance, une question ou simplement envie d'échanger ? N'hésitez pas à
+        me contacter.
+      </p>
+      <div class="contact__links">
+        <a href="mailto:baguelinraphael@gmail.com" class="contact__link" @click.prevent="copyEmail">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          {{ emailCopied ? 'Copié !' : 'baguelinraphael@gmail.com' }}
+        </a>
+        <a
+          href="https://www.linkedin.com/in/raphael-baguelin"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact__link"
+        >
+          <img src="/linkedin.svg" width="24" height="24" alt="LinkedIn" />
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/raphbag"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact__link"
+        >
+          <img src="/github.svg" width="24" height="24" alt="GitHub" />
+          GitHub
         </a>
       </div>
     </section>
@@ -166,12 +245,12 @@ const competences = [
 
 <style scoped>
 .hero {
-  min-height: 70vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .hero__title {
@@ -194,6 +273,51 @@ const competences = [
   margin: 0;
   font-weight: 300;
   color: #d6d6d6;
+  max-width: 950px;
+}
+
+.hero__objective {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(45deg, rgba(100, 108, 255, 0.2), rgba(66, 184, 131, 0.2));
+  border: 1px solid rgba(100, 108, 255, 0.35);
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  margin: 0.4rem 0;
+  text-align: center;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.hero__cta {
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  color: #f2f2f2;
+  border: 1px solid #4f4f4f;
+  background-color: #2d2d2d;
+}
+
+.hero__cta:hover {
+  opacity: 0.9;
+  border-color: #646cff;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.hero__cta--primary {
+  border: 1px solid rgba(100, 108, 255, 0.7);
+  background: linear-gradient(45deg, #646cff, #42b883);
+}
+
+.hero__cta--secondary {
+  border: 1px solid #666666;
 }
 
 .competences {
@@ -249,6 +373,70 @@ const competences = [
 
   .hero__subtitle {
     font-size: 1.2rem;
+  }
+
+  .hero__objective {
+    font-size: 1rem;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(145deg, #1e1e1e, #242424);
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 2rem auto;
+  margin-bottom: 6rem;
+}
+
+.contact h1 {
+  margin-bottom: 0.5rem;
+}
+
+.contact__intro {
+  text-align: center;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.contact__link:hover {
+  background-color: #3a3a3a;
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact__links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact__link {
+    justify-content: center;
   }
 }
 </style>

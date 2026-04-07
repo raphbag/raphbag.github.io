@@ -6,6 +6,8 @@ const projets = [
   {
     id: 1,
     titre: 'IoT - Système surveillance température et humidité',
+    annee: '2025',
+    technos: ['MQTT', 'Python'],
     images: [
       {
         src: 'https://github.com/raphbag/IoT-Home-Weather-Station/raw/main/.github/preview.jpg',
@@ -31,6 +33,8 @@ const projets = [
   {
     id: 2,
     titre: 'WEB - Maquette Omnifood',
+    annee: '2025',
+    technos: ['HTML', 'CSS'],
     images: [
       {
         src: 'https://github.com/raphbag/maquette-omnifood/raw/master/.github/preview-omnifood-raphbag.png',
@@ -58,6 +62,8 @@ const projets = [
   {
     id: 3,
     titre: 'WEB - Webtrain',
+    annee: '2026',
+    technos: ['Astro', 'Tailwind', 'Google Maps API', 'IDFM API'],
     images: [
       {
         src: 'https://github.com/raphbag/webtrain/raw/master/.github/overview_webtrain.png',
@@ -88,7 +94,9 @@ const projets = [
   },
   {
     id: 4,
-    titre: "Réseau - Sécurisation Offensive et Défensive d'un réseau privé LAN",
+    titre: "Cyber - Sécurisation Offensive et Défensive d'un réseau privé LAN",
+    annee: 'En cours',
+    technos: ['VirtualBox', 'Kali Linux', 'Wireshark', 'Nmap'],
     images: [
       {
         src: cyberImage,
@@ -96,7 +104,7 @@ const projets = [
       },
     ],
     description:
-      "En cours... Ce projet vise à évaluer et renforcer la résilience d'une infrastructure virtuelle via des tests d'intrusion sous Kali Linux, ciblant les vulnérabilités réseau et applicatives (MITM, injection SQL). L'objectif est de sécuriser les données sensibles incluant un audit technique, le déploiement de contre-mesures et le développement de solutions de chiffrement.",
+      "Ce projet vise à évaluer et renforcer la résilience d'une infrastructure virtuelle via des tests d'intrusion sous Kali Linux, ciblant les vulnérabilités réseau et applicatives (MITM, injection SQL). L'objectif est de sécuriser les données sensibles incluant un audit technique, le déploiement de contre-mesures et le développement de solutions de chiffrement.",
     type: 'ESME',
   },
 ]
@@ -116,23 +124,46 @@ onMounted(() => {
 
 <template>
   <main>
-    <section class="projets">
+    <section class="projets" aria-labelledby="projets-title">
+      <h1 id="projets-title">Mes projets</h1>
       <TransitionGroup name="fade-projet" tag="div">
-        <div class="projet" v-for="projet in visibleProjets" :key="projet.id">
-          <h2>{{ projet.titre }}</h2>
+        <article class="projet" v-for="projet in visibleProjets" :key="projet.id">
+          <div class="projet__header">
+            <h2>{{ projet.titre }}</h2>
+            <div class="projet__meta">
+              <span
+                class="projet__annee"
+                :class="{ 'projet__annee--encours': projet.annee === 'En cours' }"
+              >
+                {{ projet.annee }}
+              </span>
+            </div>
+          </div>
+          <div class="projet__technos" v-if="projet.technos" role="list" aria-label="Technologies utilisées">
+            <span v-for="tech in projet.technos" :key="tech" class="projet__tech" role="listitem">{{ tech }}</span>
+          </div>
           <div class="images">
-            <img v-for="img in projet.images" :src="img.src" :alt="img.alt" :key="img.src" />
+            <img
+              v-for="img in projet.images"
+              :key="img.src"
+              :src="img.src"
+              :alt="img.alt"
+              loading="lazy"
+            />
           </div>
           <p>{{ projet.description }}</p>
           <div class="bottom">
-            <div class="liens">
+            <div class="liens" role="list" aria-label="Liens du projet">
               <a
                 v-for="lien in projet.liens"
                 :key="lien.url"
                 :href="lien.url"
                 :target="lien.newTab ? '_blank' : '_self'"
+                :rel="lien.newTab ? 'noopener noreferrer' : undefined"
+                role="listitem"
+                :aria-label="`${lien.label}${lien.newTab ? ' - ouvrir dans un nouvel onglet' : ''}`"
               >
-                <img :src="lien.icon" width="26px" :alt="`Icon ${lien.label}`" />
+                <img :src="lien.icon" width="26" height="26" alt="" aria-hidden="true" />
                 {{ lien.label }}
                 <svg
                   v-if="lien.newTab"
@@ -145,6 +176,7 @@ onMounted(() => {
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
                 >
                   <g fill="none" fill-rule="evenodd">
                     <path
@@ -155,7 +187,7 @@ onMounted(() => {
               </a>
             </div>
             <span v-if="projet.type === 'ESME'">
-              <img src="@/assets/Esme-sudria-logo.png" alt="Logo ESME Sudria" /> ESME
+              <img src="@/assets/Esme-sudria-logo.png" alt="" aria-hidden="true" width="30" height="30" /> ESME
             </span>
             <span v-else-if="projet.type === 'Perso'" class="perso">
               <svg
@@ -168,6 +200,7 @@ onMounted(() => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                aria-hidden="true"
               >
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
@@ -176,13 +209,14 @@ onMounted(() => {
             </span>
             <span v-else class="autre">{{ projet.type }}</span>
           </div>
-        </div>
+        </article>
       </TransitionGroup>
     </section>
   </main>
 </template>
 
 <style scoped>
+
 main {
   padding: 0 20px;
 }
@@ -212,6 +246,13 @@ main {
   /* background: linear-gradient(145deg, var(--vt-c-black), #161616); */
 }
 
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
 h2 {
   background: linear-gradient(150deg, #333 70%, transparent 100%);
   background-size: 200% 100%;
@@ -234,6 +275,62 @@ h2:hover {
   transition:
     background-position 0.3s ease,
     color 0.3s ease;
+}
+
+.projet__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.projet__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.projet__categorie {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(100, 108, 255, 0.15);
+  color: #a5a8ff;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+.projet__annee {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(66, 184, 131, 0.15);
+  color: #6fd9a6;
+  border: 1px solid rgba(66, 184, 131, 0.3);
+}
+
+.projet__annee--encours {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.projet__technos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.projet__tech {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: #3a3a3a;
+  color: #c9c9c9;
+  border: none;
+  margin-top: 0;
 }
 
 .projet:hover {
