@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <p>© {{ new Date().getFullYear() }} Raphael Baguelin</p>
+      <p>© {{ new Date().getFullYear() }} - Raphaël Baguelin</p>
       <a
         href="https://www.linkedin.com/in/raphael-baguelin"
         target="_blank"
@@ -43,6 +43,6 @@ footer a {
 }
 
 img {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 </style>

@@ -101,7 +101,7 @@ const competences = [
 <template>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="hero__title">Raphael Baguelin</h1>
+      <h1 id="hero-title" class="hero__title">Raphaël Baguelin</h1>
       <h2 class="hero__subtitle">
         Etudiant en cybersécurité passionné par l'informatique et les nouvelles technologies.
       </h2>
@@ -110,12 +110,7 @@ const competences = [
       </p>
       <div class="hero__actions">
         <RouterLink to="/projets" class="hero__cta hero__cta--primary">Voir mes projets</RouterLink>
-        <a
-          href="https://www.linkedin.com/in/raphael-baguelin/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BATSQ6lFjQ6qTg7Q78ccMPA%3D%3D"
-          class="hero__cta hero__cta--secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="#contact" class="hero__cta hero__cta--secondary" rel="noopener noreferrer">
           Me contacter
         </a>
       </div>
@@ -133,11 +128,7 @@ const competences = [
           role="listitem"
           :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
-          <img
-            :src="competence.img"
-            :alt="competence.name"
-            loading="lazy"
-          />
+          <img :src="competence.img" :alt="competence.name" loading="lazy" />
         </a>
       </div>
       <h2>Outils</h2>
@@ -151,11 +142,7 @@ const competences = [
           role="listitem"
           :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
-          <img
-            :src="competence.img"
-            :alt="competence.name"
-            loading="lazy"
-          />
+          <img :src="competence.img" :alt="competence.name" loading="lazy" />
         </a>
       </div>
       <h2>Cloud</h2>
@@ -169,11 +156,7 @@ const competences = [
           role="listitem"
           :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
-          <img
-            :src="competence.img"
-            :alt="competence.name"
-            loading="lazy"
-          />
+          <img :src="competence.img" :alt="competence.name" loading="lazy" />
         </a>
       </div>
       <h2>Systèmes d'exploitation</h2>
@@ -187,11 +170,7 @@ const competences = [
           role="listitem"
           :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
         >
-          <img
-            :src="competence.img"
-            :alt="competence.name"
-            loading="lazy"
-          />
+          <img :src="competence.img" :alt="competence.name" loading="lazy" />
         </a>
       </div>
     </section>
@@ -244,6 +223,10 @@ const competences = [
 </template>
 
 <style scoped>
+:global(html) {
+  scroll-behavior: smooth;
+}
+
 .hero {
   min-height: 85vh;
   display: flex;

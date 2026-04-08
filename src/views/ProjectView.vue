@@ -7,7 +7,7 @@ const projets = [
     id: 1,
     titre: 'IoT - Système surveillance température et humidité',
     annee: '2025',
-    technos: ['MQTT', 'Python'],
+    technos: ['MQTT', 'Python', 'Node-Red'],
     images: [
       {
         src: 'https://github.com/raphbag/IoT-Home-Weather-Station/raw/main/.github/preview.jpg',
@@ -139,8 +139,15 @@ onMounted(() => {
               </span>
             </div>
           </div>
-          <div class="projet__technos" v-if="projet.technos" role="list" aria-label="Technologies utilisées">
-            <span v-for="tech in projet.technos" :key="tech" class="projet__tech" role="listitem">{{ tech }}</span>
+          <div
+            class="projet__technos"
+            v-if="projet.technos"
+            role="list"
+            aria-label="Technologies utilisées"
+          >
+            <span v-for="tech in projet.technos" :key="tech" class="projet__tech" role="listitem">{{
+              tech
+            }}</span>
           </div>
           <div class="images">
             <img
@@ -187,7 +194,14 @@ onMounted(() => {
               </a>
             </div>
             <span v-if="projet.type === 'ESME'">
-              <img src="@/assets/Esme-sudria-logo.png" alt="" aria-hidden="true" width="30" height="30" /> ESME
+              <img
+                src="@/assets/Esme-sudria-logo.png"
+                alt=""
+                aria-hidden="true"
+                width="30"
+                height="30"
+              />
+              ESME
             </span>
             <span v-else-if="projet.type === 'Perso'" class="perso">
               <svg
@@ -216,7 +230,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 main {
   padding: 0 20px;
 }
