@@ -4,9 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/favicon-dark.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon-light.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/favicon-dark.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
+  <link id="favicon" rel="icon" href="/favicon-dark.ico" type="image/x-icon">
+  <script>
+    const favicon = document.getElementById('favicon');
+    const updateFavicon = (e) => {
+      favicon.href = e.matches ? '/favicon-light.ico' : '/favicon-dark.ico';
+    };
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    updateFavicon(prefersDark);
+    prefersDark.addEventListener('change', updateFavicon);
+  </script>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <title>Raphaël Baguelin - Portfolio</title>
   <meta name="description"
