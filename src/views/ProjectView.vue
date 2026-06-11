@@ -95,7 +95,7 @@ const projets = [
   {
     id: 4,
     titre: "Cyber - Sécurisation Offensive et Défensive d'un réseau privé LAN",
-    annee: 'En cours',
+    annee: '2026',
     technos: ['VirtualBox', 'Kali Linux', 'Wireshark', 'Nmap'],
     images: [
       {
@@ -104,7 +104,7 @@ const projets = [
       },
     ],
     description:
-      "Ce projet vise à évaluer et renforcer la résilience d'une infrastructure virtuelle via des tests d'intrusion sous Kali Linux, ciblant les vulnérabilités réseau et applicatives (MITM, injection SQL). L'objectif est de sécuriser les données sensibles incluant un audit technique, le déploiement de contre-mesures et le développement de solutions de chiffrement.",
+      "Ce projet vise à évaluer et renforcer la résilience d'une infrastructure virtuelle via des tests d'intrusion sous Kali Linux, ciblant les vulnérabilités réseau et applicatives (MITM, injection SQL, ARP spoofing). L'objectif est de sécuriser les données sensibles incluant un audit technique, le déploiement de contre-mesures et le développement de solutions de chiffrement.",
     type: 'ESME',
   },
 ]
