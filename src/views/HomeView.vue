@@ -105,9 +105,6 @@ const competences = [
       <h2 class="hero__subtitle">
         Etudiant en cybersécurité passionné par l'informatique et les nouvelles technologies.
       </h2>
-      <p class="hero__objective">
-        Je recherche actuellement une alternance en cybersécurité / réseau.
-      </p>
       <div class="hero__actions">
         <RouterLink to="/projets" class="hero__cta hero__cta--primary">Voir mes projets</RouterLink>
         <a href="#contact" class="hero__cta hero__cta--secondary" rel="noopener noreferrer">
@@ -257,18 +254,6 @@ const competences = [
   font-weight: 300;
   color: #d6d6d6;
   max-width: 950px;
-}
-
-.hero__objective {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(45deg, rgba(100, 108, 255, 0.2), rgba(66, 184, 131, 0.2));
-  border: 1px solid rgba(100, 108, 255, 0.35);
-  border-radius: 5px;
-  padding: 0.6rem 1rem;
-  margin: 0.4rem 0;
-  text-align: center;
 }
 
 .hero__actions {
