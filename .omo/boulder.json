@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "active_work_id": "home-3d-redesign-256e2d3b",
+  "works": {
+    "home-3d-redesign-256e2d3b": {
+      "work_id": "home-3d-redesign-256e2d3b",
+      "active_plan": "/mnt/d/Users/Raphael/Documents/code/raphbag.github.io/.omo/plans/home-3d-redesign.md",
+      "plan_name": "home-3d-redesign",
+      "status": "active",
+      "started_at": "2026-06-12T17:41:49.149Z",
+      "updated_at": "2026-06-12T17:41:49.149Z",
+      "session_ids": [
+        "opencode:ses_143513c50ffeZZI9Nka3VJkaJY"
+      ],
+      "session_origins": {
+        "opencode:ses_143513c50ffeZZI9Nka3VJkaJY": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {}
+    }
+  },
+  "active_plan": "/mnt/d/Users/Raphael/Documents/code/raphbag.github.io/.omo/plans/home-3d-redesign.md",
+  "started_at": "2026-06-12T17:41:49.149Z",
+  "status": "active",
+  "updated_at": "2026-06-12T17:41:49.149Z",
+  "session_ids": [
+    "opencode:ses_143513c50ffeZZI9Nka3VJkaJY"
+  ],
+  "session_origins": {
+    "opencode:ses_143513c50ffeZZI9Nka3VJkaJY": "direct"
+  },
+  "plan_name": "home-3d-redesign",
+  "task_sessions": {},
+  "agent": "atlas"
+}

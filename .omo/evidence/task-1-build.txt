@@ -1,0 +1,26 @@
+> portfolio@0.0.0 build
+> vite build
+
+vite v7.3.2 building client environment for production...
+transforming...
+✓ 36 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             2.85 kB │ gzip:  1.11 kB
+dist/assets/Esme-sudria-logo-zBsz9I7x.png  52.46 kB
+dist/assets/Typo-Projet-cyber-DG-veuxU.png 115.49 kB
+dist/assets/index-BAoZcBk5.css              9.96 kB │ gzip:  2.49 kB
+dist/assets/index-C2SVXnGf.js             111.34 kB │ gzip: 42.35 kB
+✓ built in 2.08s
+
+--- Dependencies added ---
+three: ^0.184.0
+@tresjs/core: ^5.8.1
+gsap: ^3.15.0
+
+--- vite.config.js updated ---
+Added TresJS isCustomElement compilerOption:
+  isCustomElement: (tag) => tag.startsWith('Tres')
+
+--- Build result: EXIT CODE 0 ---
+Date: Sat Jun 13 2026
