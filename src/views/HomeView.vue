@@ -102,11 +102,11 @@ const competences = [
   <main class="relative w-full max-w-7xl mx-auto">
     <!-- Section Hero: plein écran, centré -->
     <section
-      class="min-h-[100svh] flex flex-col px-5 md:px-8 relative pt-[100px] pb-24"
+      class="min-h-[100svh] flex flex-col items-center justify-center pt-[70px] pb-10 px-4 md:px-8 relative overflow-hidden"
       data-scroll-section
       aria-labelledby="hero-title"
     >
-      <div class="m-auto flex flex-col items-center gap-6 md:gap-8 w-full">
+      <div class="flex flex-col items-center justify-center gap-6 md:gap-8 w-full max-w-full">
         <div
           class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-[#42b883]/30 text-[#42b883] text-[0.7rem] md:text-[0.8rem] font-mono tracking-[0.08em] uppercase animate-[fadeIn_0.6s_ease_both]"
         >
@@ -117,25 +117,31 @@ const competences = [
         </div>
         <h1
           id="hero-title"
-          class="text-[clamp(2.8rem,7vw,5rem)] font-extrabold text-center m-0 tracking-[-0.02em] leading-[1.1] bg-[linear-gradient(135deg,#e0e0e0_20%,#646cff_55%,#42b883_100%)] bg-[length:200%_200%] bg-clip-text text-transparent animate-[fadeIn_0.8s_ease_0.1s_both,gradient-shift_6s_ease_infinite] py-4 md:py-8"
+          class="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-center m-0 tracking-[-0.02em] leading-[1.1] py-2 md:py-4 w-full wrap-break-words"
         >
-          Raphaël Baguelin
+          <span
+            class="bg-[linear-gradient(135deg,#e0e0e0_20%,#646cff_55%,#42b883_100%)] bg-size-[length:200%_200%] bg-clip-text text-transparent animate-[fadeIn_0.8s_ease_0.1s_both,gradient-shift_6s_ease_infinite]"
+          >
+            Raphaël Baguelin
+          </span>
         </h1>
         <p
-          class="text-[clamp(1rem,2.2vw,1.2rem)] text-center m-0 font-light text-[#9a9ab0] max-w-[700px] leading-[1.7] animate-[fadeIn_0.9s_ease_0.2s_both]"
+          class="text-base sm:text-[clamp(1rem,2.2vw,1.2rem)] text-center m-0 font-light text-[#9a9ab0] max-w-[700px] leading-[1.7] animate-[fadeIn_0.9s_ease_0.2s_both] w-full px-2"
         >
           Étudiant passionné par l'informatique, la cybersécurité, les réseaux et les nouvelles
           technologies.
         </p>
-        <div class="flex flex-wrap justify-center gap-4 animate-[fadeIn_1s_ease_0.35s_both]">
+        <div
+          class="flex flex-wrap justify-center gap-3 sm:gap-4 animate-[fadeIn_1s_ease_0.35s_both] w-full px-2"
+        >
           <RouterLink
             to="/projets"
-            class="inline-flex items-center gap-2 rounded-[10px] py-[0.7rem] px-[1.4rem] font-semibold text-[0.95rem] text-[#e0e0e0] border border-[#646cff]/50 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-[linear-gradient(135deg,rgba(100,108,255,0.3),rgba(66,184,131,0.2))] hover:border-[#646cff] hover:shadow-[0_0_20px_rgba(100,108,255,0.35)]"
+            class="inline-flex justify-center items-center gap-2 rounded-[10px] py-[0.7rem] px-[1rem] sm:px-[1.4rem] font-semibold text-[0.9rem] sm:text-[0.95rem] text-[#e0e0e0] border border-[#646cff]/50 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-[linear-gradient(135deg,rgba(100,108,255,0.3),rgba(66,184,131,0.2))] hover:border-[#646cff] hover:shadow-[0_0_20px_rgba(100,108,255,0.35)] w-full sm:w-auto text-center"
             >Voir mes projets</RouterLink
           >
           <a
             href="#contact"
-            class="inline-flex items-center gap-2 rounded-[10px] py-[0.7rem] px-[1.4rem] font-semibold text-[0.95rem] text-[#e0e0e0] border border-white/10 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-white/5 hover:border-[#42b883] hover:shadow-[0_0_20px_rgba(66,184,131,0.25)]"
+            class="inline-flex justify-center items-center gap-2 rounded-[10px] py-[0.7rem] px-[1rem] sm:px-[1.4rem] font-semibold text-[0.9rem] sm:text-[0.95rem] text-[#e0e0e0] border border-white/10 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-white/5 hover:border-[#42b883] hover:shadow-[0_0_20px_rgba(66,184,131,0.25)] w-full sm:w-auto text-center"
             rel="noopener noreferrer"
           >
             Me contacter
