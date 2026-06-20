@@ -231,7 +231,7 @@ onMounted(() => {
 
 <style scoped>
 main {
-  padding: 0 20px;
+  padding: 100px 20px 0;
 }
 
 .projets {
@@ -249,14 +249,20 @@ main {
   justify-content: center;
   padding: 20px;
   gap: 5px;
-  background-color: #242424;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: #242424 1px solid;
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 15px;
   transition: all 0.3s ease;
   max-width: 1000px;
   margin-bottom: 10px;
-  /* background: linear-gradient(145deg, var(--vt-c-black), #161616); */
+}
+
+.projet:hover {
+  border-color: rgba(100, 108, 255, 0.4);
+  box-shadow: 0 4px 25px rgba(100, 108, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 h1 {
@@ -267,7 +273,7 @@ h1 {
 }
 
 h2 {
-  background: linear-gradient(150deg, #333 70%, transparent 100%);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
   background-size: 200% 100%;
   background-position: left center;
   padding: 4px 12px;
@@ -275,19 +281,14 @@ h2 {
   display: inline-block;
   font-weight: 600;
   color: #e0e0e0;
-  transition:
-    background-position 0.3s ease,
-    color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
 h2:hover {
-  background: linear-gradient(150deg, #4e54c8 60%, #8f94fb 100%);
-  background-size: 200% 100%;
-  background-position: right center;
+  background: linear-gradient(150deg, rgba(100, 108, 255, 0.2) 0%, rgba(66, 184, 131, 0.2) 100%);
+  border-color: rgba(100, 108, 255, 0.3);
   color: #fff;
-  transition:
-    background-position 0.3s ease,
-    color 0.3s ease;
 }
 
 .projet__header {
@@ -340,15 +341,10 @@ h2:hover {
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  background-color: #3a3a3a;
+  background-color: rgba(255, 255, 255, 0.05);
   color: #c9c9c9;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 0;
-}
-
-.projet:hover {
-  transition: all 0.3s ease;
-  border: #797979 1px solid;
 }
 
 .projet .images {
@@ -382,7 +378,7 @@ h2:hover {
 }
 
 .projet .images img:hover {
-  box-shadow: 0 8px 25px #313133;
+  box-shadow: 0 8px 25px rgba(100, 108, 255, 0.2);
 }
 
 .projet a {
@@ -392,16 +388,17 @@ h2:hover {
   gap: 5px;
   color: #d6d6d6;
   text-decoration: none;
-  border: #797979 0.5px solid;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 12px;
+  transition: all 0.3s ease;
 }
 
 .projet a:hover {
-  flex-wrap: wrap;
-  gap: 10px;
-  background-color: #797979;
-  transition: all 0.3s ease;
+  background: rgba(100, 108, 255, 0.15);
+  border-color: rgba(100, 108, 255, 0.4);
+  color: #fff;
 }
 
 .bottom {
@@ -424,12 +421,12 @@ span {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border: #333 0.5px solid;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   color: #d6d6d6;
-  text-decoration: none;
   border-radius: 10px;
   margin-top: 10px;
-  padding: 5px;
+  padding: 5px 12px;
 }
 
 span img {

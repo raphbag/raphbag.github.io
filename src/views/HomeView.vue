@@ -99,9 +99,6 @@ const competences = [
 </script>
 
 <template>
-  <!-- Conteneur 3D fixe (sera peuplé par CyberScene en T4) -->
-  <div class="cyber-bg" aria-hidden="true"></div>
-
   <main class="home">
     <!-- Section Hero: plein écran, centré -->
     <section class="hero" data-scroll-section aria-labelledby="hero-title">
@@ -111,8 +108,8 @@ const competences = [
       </div>
       <h1 id="hero-title" class="hero__title">Raphaël Baguelin</h1>
       <p class="hero__subtitle">
-        Étudiant passionné par la cybersécurité, les réseaux et les nouvelles technologies.
-        À la recherche d'une alternance pour mettre mes compétences en pratique.
+        Étudiant passionné par l'informatique, la cybersécurité, les réseaux et les nouvelles
+        technologies.
       </p>
       <div class="hero__actions">
         <RouterLink to="/projets" class="hero__cta hero__cta--primary">Voir mes projets</RouterLink>
@@ -214,8 +211,8 @@ const competences = [
       <div class="contact__card">
         <h2 id="contact-title" class="section-title">Me contacter</h2>
         <p class="contact__intro">
-          Une opportunité d'alternance, une question ou simplement envie d'échanger ? N'hésitez
-          pas à me contacter.
+          Une opportunité d'alternance, une question ou simplement envie d'échanger ? N'hésitez pas
+          à me contacter.
         </p>
         <div class="contact__links">
           <a
@@ -331,17 +328,6 @@ const competences = [
   }
 }
 
-/* ─── Cyber background placeholder ─────────────────────────── */
-.cyber-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse at 30% 40%, rgba(100, 108, 255, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(66, 184, 131, 0.1) 0%, transparent 60%),
-    #0a0a0f;
-}
-
 /* ─── Home wrapper ──────────────────────────────────────────── */
 .home {
   position: relative;
@@ -354,7 +340,7 @@ const competences = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20vh 2rem 8rem;
+  padding: 0 2rem;
   gap: 2rem;
   position: relative;
   /* transparent — laisse apparaître la scène 3D */
@@ -401,6 +387,7 @@ const competences = [
   animation:
     fadeIn 0.8s ease 0.1s both,
     gradient-shift 6s ease infinite;
+  padding: 2rem 0;
 }
 
 .hero__subtitle {
@@ -490,7 +477,7 @@ const competences = [
   align-items: center;
   gap: 4rem;
   /* semi-transparent pour laisser voir la scène 3D */
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(10, 10, 15, 0.15);
   backdrop-filter: blur(5px);
 }
 
@@ -541,6 +528,7 @@ const competences = [
 .competences__grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -597,9 +585,8 @@ const competences = [
   display: flex;
   align-items: center;
   justify-content: center;
-  /* semi-transparent pour laisser voir la scène 3D */
-  background: rgba(10, 10, 15, 0.9);
-  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 15, 0.15);
+  backdrop-filter: blur(5px);
 }
 
 .contact__card {
@@ -661,7 +648,7 @@ const competences = [
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 16vh;
+    padding: 0 1.25rem;
     gap: 1.5rem;
   }
 
