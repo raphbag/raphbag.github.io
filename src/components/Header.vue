@@ -3,76 +3,32 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <div class="header-wrapper">
-    <header>
-      <RouterLink to="/" aria-label="Accueil - Raphael Baguelin">
-        <img alt="" aria-hidden="true" class="logo" src="/logo.svg" height="50" />
+  <div
+    class="absolute top-0 left-0 w-full z-[100] flex justify-center bg-[#0a0a0f]/40 backdrop-blur-md border-b border-white/5"
+  >
+    <header class="flex items-center justify-between w-full max-w-7xl px-8 py-2">
+      <RouterLink to="/" aria-label="Accueil - Raphael Baguelin" class="flex items-center">
+        <img
+          alt=""
+          aria-hidden="true"
+          class="drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] h-[50px] w-auto"
+          src="/logo.svg"
+        />
       </RouterLink>
-      <nav aria-label="Navigation principale">
-        <RouterLink to="/" active-class="active">Home</RouterLink>
-        <RouterLink to="/projets" active-class="active">Projets</RouterLink>
+      <nav aria-label="Navigation principale" class="flex gap-4">
+        <RouterLink
+          to="/"
+          class="flex items-center no-underline text-[#9a9ab0] text-[0.95rem] font-medium px-4 py-2 rounded-lg transition-all duration-300 border border-transparent hover:text-[#e0e0e0] hover:bg-[#646cff]/10 hover:border-[#646cff]/30"
+          active-class="!text-[#42b883] bg-[#42b883]/10 !border-[#42b883]/30"
+          >Home</RouterLink
+        >
+        <RouterLink
+          to="/projets"
+          class="flex items-center no-underline text-[#9a9ab0] text-[0.95rem] font-medium px-4 py-2 rounded-lg transition-all duration-300 border border-transparent hover:text-[#e0e0e0] hover:bg-[#646cff]/10 hover:border-[#646cff]/30"
+          active-class="!text-[#42b883] bg-[#42b883]/10 !border-[#42b883]/30"
+          >Projets</RouterLink
+        >
       </nav>
     </header>
   </div>
 </template>
-
-<style scoped>
-.header-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  background: rgba(10, 10, 15, 0.4);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1280px;
-  padding: 0.5rem 2rem;
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-}
-
-nav > a {
-  text-decoration: none;
-  color: #9a9ab0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
-
-nav > a:hover {
-  color: #e0e0e0;
-  background: rgba(100, 108, 255, 0.1);
-  border-color: rgba(100, 108, 255, 0.3);
-}
-
-.active {
-  color: #42b883 !important;
-  background: rgba(66, 184, 131, 0.1);
-  border-color: rgba(66, 184, 131, 0.3) !important;
-}
-
-a {
-  display: flex;
-  align-items: center;
-}
-
-img {
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
-}
-</style>

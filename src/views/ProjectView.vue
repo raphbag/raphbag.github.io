@@ -123,44 +123,70 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
-    <section class="projets" aria-labelledby="projets-title">
-      <h1 id="projets-title">Mes projets</h1>
-      <TransitionGroup name="fade-projet" tag="div">
-        <article class="projet" v-for="projet in visibleProjets" :key="projet.id">
-          <div class="projet__header">
-            <h2>{{ projet.titre }}</h2>
-            <div class="projet__meta">
+  <main class="pt-25 px-5 pb-0 w-full max-w-7xl mx-auto">
+    <section
+      class="flex flex-col items-center justify-center p-[15px]"
+      aria-labelledby="projets-title"
+    >
+      <h1 id="projets-title" class="text-[2.5rem] font-bold text-[#e0e0e0] mb-5!">Mes projets</h1>
+      <TransitionGroup name="fade-projet" tag="div" class="w-full flex flex-col items-center gap-8">
+        <article
+          class="flex flex-col items-start justify-center p-5 gap-[5px] bg-[#0a0a0f]/60 backdrop-blur-[10px] shadow-[0_4px_20px_rgba(0,0,0,0.3)] border border-white/10 rounded-[15px] transition-all duration-300 max-w-[1000px] mb-2.5 hover:border-[#646cff]/40 hover:shadow-[0_4px_25px_rgba(100,108,255,0.15)] hover:-translate-y-0.5 w-full"
+          v-for="projet in visibleProjets"
+          :key="projet.id"
+        >
+          <div class="flex flex-wrap items-center justify-between w-full gap-2">
+            <h2
+              class="bg-[linear-gradient(150deg,rgba(255,255,255,0.05)_0%,transparent_100%)] bg-[length:200%_100%] bg-left-center py-1 px-3 rounded-md inline-block font-semibold text-[#e0e0e0] border border-white/5 transition-all duration-300 hover:bg-[linear-gradient(150deg,rgba(100,108,255,0.2)_0%,rgba(66,184,131,0.2)_100%)] hover:border-[#646cff]/30 hover:text-white"
+            >
+              {{ projet.titre }}
+            </h2>
+            <div class="flex gap-2 flex-wrap">
               <span
-                class="projet__annee"
-                :class="{ 'projet__annee--encours': projet.annee === 'En cours' }"
+                class="text-[0.8rem] py-1 px-2.5 rounded-full border"
+                :class="
+                  projet.annee === 'En cours'
+                    ? 'bg-[#ffc107]/15 text-[#ffc107] border-[#ffc107]/30'
+                    : 'bg-[#42b883]/15 text-[#6fd9a6] border-[#42b883]/30'
+                "
               >
                 {{ projet.annee }}
               </span>
             </div>
           </div>
           <div
-            class="projet__technos"
+            class="flex flex-wrap gap-[0.4rem] mt-1"
             v-if="projet.technos"
             role="list"
             aria-label="Technologies utilisées"
           >
-            <span v-for="tech in projet.technos" :key="tech" class="projet__tech" role="listitem">{{
-              tech
-            }}</span>
+            <span
+              v-for="tech in projet.technos"
+              :key="tech"
+              class="text-[0.75rem] py-[0.2rem] px-2 rounded bg-white/5 text-[#c9c9c9] border border-white/10 mt-0"
+              role="listitem"
+              >{{ tech }}</span
+            >
           </div>
-          <div class="images">
+          <div
+            class="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center justify-items-center gap-[15px] w-full py-[15px]"
+          >
             <img
               v-for="img in projet.images"
               :key="img.src"
               :src="img.src"
               :alt="img.alt"
               loading="lazy"
+              class="rounded-lg w-auto max-w-full h-auto max-h-[400px] object-contain shadow-[0_4px_15px_rgba(0,0,0,0.4)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_8px_25px_rgba(100,108,255,0.2)]"
             />
           </div>
           <p>{{ projet.description }}</p>
-          <div class="bottom">
-            <div class="liens" role="list" aria-label="Liens du projet">
+          <div class="flex items-center justify-between w-full mt-2.5!">
+            <div
+              class="flex items-center gap-2.5 flex-wrap"
+              role="list"
+              aria-label="Liens du projet"
+            >
               <a
                 v-for="lien in projet.liens"
                 :key="lien.url"
@@ -169,6 +195,7 @@ onMounted(() => {
                 :rel="lien.newTab ? 'noopener noreferrer' : undefined"
                 role="listitem"
                 :aria-label="`${lien.label}${lien.newTab ? ' - ouvrir dans un nouvel onglet' : ''}`"
+                class="flex items-center justify-center gap-[5px] text-[#d6d6d6] no-underline border border-white/10 bg-white/5 rounded-[10px] py-[5px] px-[12px] transition-all duration-300 hover:bg-[#646cff]/15 hover:border-[#646cff]/40 hover:text-white"
               >
                 <img :src="lien.icon" width="26" height="26" alt="" aria-hidden="true" />
                 {{ lien.label }}
@@ -193,7 +220,10 @@ onMounted(() => {
                 </svg>
               </a>
             </div>
-            <span v-if="projet.type === 'ESME'">
+            <span
+              v-if="projet.type === 'ESME'"
+              class="flex items-center justify-center gap-[5px] border border-white/10 bg-white/5 text-[#d6d6d6] rounded-[10px] mt-2.5 py-[5px] px-[12px]"
+            >
               <img
                 src="@/assets/Esme-sudria-logo.png"
                 alt=""
@@ -203,7 +233,10 @@ onMounted(() => {
               />
               ESME
             </span>
-            <span v-else-if="projet.type === 'Perso'" class="perso">
+            <span
+              v-else-if="projet.type === 'Perso'"
+              class="flex items-center justify-center gap-[5px] border border-white/10 bg-white/5 text-[#d6d6d6] rounded-[10px] mt-2.5 py-[5px] px-[12px]"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -221,7 +254,11 @@ onMounted(() => {
               </svg>
               Perso
             </span>
-            <span v-else class="autre">{{ projet.type }}</span>
+            <span
+              v-else
+              class="flex items-center justify-center gap-[5px] border border-white/10 bg-white/5 text-[#d6d6d6] rounded-[10px] mt-2.5 py-[5px] px-[12px]"
+              >{{ projet.type }}</span
+            >
           </div>
         </article>
       </TransitionGroup>
@@ -230,210 +267,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-main {
-  padding: 100px 20px 0;
-}
-
-.projets {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-}
-
-.projet {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  padding: 20px;
-  gap: 5px;
-  background: rgba(10, 10, 15, 0.6);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  max-width: 1000px;
-  margin-bottom: 10px;
-}
-
-.projet:hover {
-  border-color: rgba(100, 108, 255, 0.4);
-  box-shadow: 0 4px 25px rgba(100, 108, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #e0e0e0;
-  margin-bottom: 20px;
-}
-
-h2 {
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-  background-size: 200% 100%;
-  background-position: left center;
-  padding: 4px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  font-weight: 600;
-  color: #e0e0e0;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-h2:hover {
-  background: linear-gradient(150deg, rgba(100, 108, 255, 0.2) 0%, rgba(66, 184, 131, 0.2) 100%);
-  border-color: rgba(100, 108, 255, 0.3);
-  color: #fff;
-}
-
-.projet__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 0.5rem;
-}
-
-.projet__meta {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.projet__categorie {
-  font-size: 0.8rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background-color: rgba(100, 108, 255, 0.15);
-  color: #a5a8ff;
-  border: 1px solid rgba(100, 108, 255, 0.3);
-}
-
-.projet__annee {
-  font-size: 0.8rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background-color: rgba(66, 184, 131, 0.15);
-  color: #6fd9a6;
-  border: 1px solid rgba(66, 184, 131, 0.3);
-}
-
-.projet__annee--encours {
-  background-color: rgba(255, 193, 7, 0.15);
-  color: #ffc107;
-  border: 1px solid rgba(255, 193, 7, 0.3);
-}
-
-.projet__technos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.25rem;
-}
-
-.projet__tech {
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #c9c9c9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 0;
-}
-
-.projet .images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  align-items: center;
-  justify-items: center;
-  gap: 15px;
-  width: 100%;
-  padding: 15px 0;
-}
-
-@media (max-width: 768px) {
-  .projet .images {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-}
-
-.projet .images img {
-  border-radius: 8px;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.projet .images img:hover {
-  box-shadow: 0 8px 25px rgba(100, 108, 255, 0.2);
-}
-
-.projet a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  color: #d6d6d6;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  padding: 5px 12px;
-  transition: all 0.3s ease;
-}
-
-.projet a:hover {
-  background: rgba(100, 108, 255, 0.15);
-  border-color: rgba(100, 108, 255, 0.4);
-  color: #fff;
-}
-
-.bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.liens {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  color: #d6d6d6;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding: 5px 12px;
-}
-
-span img {
-  width: 30px;
-  height: 30px;
-}
-
 .fade-projet-enter-from {
   opacity: 0;
   transform: translateY(30px) scale(0.95);

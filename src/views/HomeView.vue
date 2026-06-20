@@ -99,124 +99,142 @@ const competences = [
 </script>
 
 <template>
-  <main class="home">
+  <main class="relative w-full max-w-7xl mx-auto">
     <!-- Section Hero: plein écran, centré -->
-    <section class="hero" data-scroll-section aria-labelledby="hero-title">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        Étudiant en Cybersécurité
+    <section
+      class="min-h-[100svh] flex flex-col px-5 md:px-8 relative pt-[100px] pb-24"
+      data-scroll-section
+      aria-labelledby="hero-title"
+    >
+      <div class="m-auto flex flex-col items-center gap-6 md:gap-8 w-full">
+        <div
+          class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-[#42b883]/30 text-[#42b883] text-[0.7rem] md:text-[0.8rem] font-mono tracking-[0.08em] uppercase animate-[fadeIn_0.6s_ease_both]"
+        >
+          <span
+            class="w-[7px] h-[7px] rounded-full bg-[#42b883] shrink-0 animate-[pulse-dot_2s_ease-in-out_infinite]"
+          ></span>
+          Étudiant en Cybersécurité
+        </div>
+        <h1
+          id="hero-title"
+          class="text-[clamp(2.8rem,7vw,5rem)] font-extrabold text-center m-0 tracking-[-0.02em] leading-[1.1] bg-[linear-gradient(135deg,#e0e0e0_20%,#646cff_55%,#42b883_100%)] bg-[length:200%_200%] bg-clip-text text-transparent animate-[fadeIn_0.8s_ease_0.1s_both,gradient-shift_6s_ease_infinite] py-4 md:py-8"
+        >
+          Raphaël Baguelin
+        </h1>
+        <p
+          class="text-[clamp(1rem,2.2vw,1.2rem)] text-center m-0 font-light text-[#9a9ab0] max-w-[700px] leading-[1.7] animate-[fadeIn_0.9s_ease_0.2s_both]"
+        >
+          Étudiant passionné par l'informatique, la cybersécurité, les réseaux et les nouvelles
+          technologies.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 animate-[fadeIn_1s_ease_0.35s_both]">
+          <RouterLink
+            to="/projets"
+            class="inline-flex items-center gap-2 rounded-[10px] py-[0.7rem] px-[1.4rem] font-semibold text-[0.95rem] text-[#e0e0e0] border border-[#646cff]/50 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-[linear-gradient(135deg,rgba(100,108,255,0.3),rgba(66,184,131,0.2))] hover:border-[#646cff] hover:shadow-[0_0_20px_rgba(100,108,255,0.35)]"
+            >Voir mes projets</RouterLink
+          >
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 rounded-[10px] py-[0.7rem] px-[1.4rem] font-semibold text-[0.95rem] text-[#e0e0e0] border border-white/10 backdrop-blur-md transition-[border-color,box-shadow,transform] duration-250 ease-in-out no-underline hover:-translate-y-0.5 bg-white/5 hover:border-[#42b883] hover:shadow-[0_0_20px_rgba(66,184,131,0.25)]"
+            rel="noopener noreferrer"
+          >
+            Me contacter
+          </a>
+        </div>
       </div>
-      <h1 id="hero-title" class="hero__title">Raphaël Baguelin</h1>
-      <p class="hero__subtitle">
-        Étudiant passionné par l'informatique, la cybersécurité, les réseaux et les nouvelles
-        technologies.
-      </p>
-      <div class="hero__actions">
-        <RouterLink to="/projets" class="hero__cta hero__cta--primary">Voir mes projets</RouterLink>
-        <a href="#contact" class="hero__cta hero__cta--secondary" rel="noopener noreferrer">
-          Me contacter
-        </a>
-      </div>
-      <div class="scroll-indicator" aria-hidden="true">
-        <div class="scroll-indicator__line"></div>
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+        aria-hidden="true"
+      >
+        <div
+          class="w-[1px] h-[48px] bg-[linear-gradient(to_bottom,rgba(100,108,255,0.8),transparent)] animate-[scroll-line_1.6s_ease-in-out_infinite]"
+        ></div>
       </div>
     </section>
 
     <!-- Section compétences avec glassmorphisme -->
-    <section class="competences" data-scroll-section aria-labelledby="competences-title">
-      <div class="competences__header">
-        <h2 id="competences-title" class="section-title">Mes compétences</h2>
-        <p class="section-subtitle">Technologies et outils maîtrisés</p>
+    <section
+      class="py-20 md:py-32 px-5 md:px-8 flex flex-col items-center gap-12 md:gap-16 bg-[#0a0a0f]/15 backdrop-blur-[5px]"
+      data-scroll-section
+      aria-labelledby="competences-title"
+    >
+      <div class="text-center flex flex-col gap-2">
+        <h2
+          id="competences-title"
+          class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold m-0 bg-[linear-gradient(135deg,#e0e0e0,#646cff)] bg-clip-text text-transparent"
+        >
+          Mes compétences
+        </h2>
+        <p class="text-[#6a6a80] text-[0.95rem] font-mono tracking-[0.06em]">
+          Technologies et outils maîtrisés
+        </p>
       </div>
 
-      <div class="competences__group">
-        <h3 class="competences__category">// Langages</h3>
-        <div class="competences__grid" role="list">
+      <div
+        class="w-full max-w-[900px] flex flex-col gap-6"
+        v-for="category in ['language', 'tool', 'cloud', 'os']"
+        :key="category"
+      >
+        <h3
+          class="font-mono text-[0.85rem] font-normal text-[#42b883] tracking-[0.1em] uppercase m-0 pb-3 border-b border-[#42b883]/15"
+        >
+          //
+          {{
+            category === 'language'
+              ? 'Langages'
+              : category === 'tool'
+                ? 'Outils'
+                : category === 'cloud'
+                  ? 'Cloud'
+                  : "Systèmes d'exploitation"
+          }}
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4" role="list">
           <a
-            v-for="competence in competences.filter((c) => c.type === 'language')"
+            v-for="competence in competences.filter((c) => c.type === category)"
             :key="competence.name"
             :href="competence.link"
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
-            class="competence-card"
+            class="flex flex-col items-center gap-2.5 p-2! md:p-4! w-22.5 md:w-27.5 rounded-xl bg-white/5 border border-white/10 no-underline text-[#9a9ab0] text-[0.7rem] text-center transition-[border-color,box-shadow,transform] duration-250 ease hover:border-[#646cff] hover:shadow-[0_0_16px_rgba(100,108,255,0.25)] hover:-translate-y-[3px] hover:text-[#c0c0d0] group"
             :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
           >
-            <img :src="competence.img" :alt="competence.name" loading="lazy" />
-            <span class="competence-card__name">{{ competence.name }}</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="competences__group">
-        <h3 class="competences__category">// Outils</h3>
-        <div class="competences__grid" role="list">
-          <a
-            v-for="competence in competences.filter((c) => c.type === 'tool')"
-            :key="competence.name"
-            :href="competence.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            class="competence-card"
-            :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
-          >
-            <img :src="competence.img" :alt="competence.name" loading="lazy" />
-            <span class="competence-card__name">{{ competence.name }}</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="competences__group">
-        <h3 class="competences__category">// Cloud</h3>
-        <div class="competences__grid" role="list">
-          <a
-            v-for="competence in competences.filter((c) => c.type === 'cloud')"
-            :key="competence.name"
-            :href="competence.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            class="competence-card"
-            :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
-          >
-            <img :src="competence.img" :alt="competence.name" loading="lazy" />
-            <span class="competence-card__name">{{ competence.name }}</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="competences__group">
-        <h3 class="competences__category">// Systèmes d'exploitation</h3>
-        <div class="competences__grid" role="list">
-          <a
-            v-for="competence in competences.filter((c) => c.type === 'os')"
-            :key="competence.name"
-            :href="competence.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            class="competence-card"
-            :aria-label="`${competence.name} - ouvrir dans un nouvel onglet`"
-          >
-            <img :src="competence.img" :alt="competence.name" loading="lazy" />
-            <span class="competence-card__name">{{ competence.name }}</span>
+            <img
+              :src="competence.img"
+              :alt="competence.name"
+              loading="lazy"
+              class="w-[40px] h-[40px] md:w-[52px] md:h-[52px] object-contain brightness-90 transition-[filter,transform] duration-250 ease group-hover:brightness-110 group-hover:scale-105"
+            />
+            <span class="leading-[1.3] wrap-break-words">{{ competence.name }}</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- Section contact avec carte glassmorphisme -->
-    <section class="contact" id="contact" data-scroll-section aria-labelledby="contact-title">
-      <div class="contact__card">
-        <h2 id="contact-title" class="section-title">Me contacter</h2>
-        <p class="contact__intro">
+    <section
+      class="py-20 md:py-32 px-5 md:px-8 flex items-center justify-center bg-[#0a0a0f]/15 backdrop-blur-[5px]"
+      id="contact"
+      data-scroll-section
+      aria-labelledby="contact-title"
+    >
+      <div
+        class="flex flex-col items-center gap-6 p-8 md:py-12 md:px-10 max-w-[720px] w-full rounded-[20px] bg-[#0a0a14]/80 border border-white/10 backdrop-blur-[20px] animate-[border-glow_4s_ease-in-out_infinite]"
+      >
+        <h2
+          id="contact-title"
+          class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold m-0 bg-[linear-gradient(135deg,#e0e0e0,#646cff)] bg-clip-text text-transparent"
+        >
+          Me contacter
+        </h2>
+        <p class="text-center text-[#6a6a80] max-w-[560px] leading-[1.7] text-[0.95rem]">
           Une question ou simplement envie d'échanger ? N'hésitez pas à me contacter.
         </p>
-        <div class="contact__links">
+        <div class="flex flex-col md:flex-row flex-wrap justify-center w-full md:w-auto gap-3">
           <a
             href="mailto:baguelinraphael@gmail.com"
-            class="contact__link"
+            class="inline-flex justify-center md:justify-start items-center gap-2 py-2.5 px-5 rounded-full bg-white/5 border border-white/10 text-[#c0c0d0] font-medium text-[0.9rem] no-underline transition-[border-color,box-shadow,transform,color] duration-200 ease hover:border-[#646cff] hover:shadow-[0_0_16px_rgba(100,108,255,0.3)] hover:-translate-y-0.5 hover:text-[#e0e0e0]"
             @click.prevent="copyEmail"
           >
             <svg
@@ -240,7 +258,7 @@ const competences = [
             href="https://www.linkedin.com/in/raphael-baguelin"
             target="_blank"
             rel="noopener noreferrer"
-            class="contact__link"
+            class="inline-flex justify-center md:justify-start items-center gap-2 py-2.5 px-5 rounded-full bg-white/5 border border-white/10 text-[#c0c0d0] font-medium text-[0.9rem] no-underline transition-[border-color,box-shadow,transform,color] duration-200 ease hover:border-[#646cff] hover:shadow-[0_0_16px_rgba(100,108,255,0.3)] hover:-translate-y-0.5 hover:text-[#e0e0e0]"
           >
             <img src="/linkedin.svg" width="20" height="20" alt="LinkedIn" aria-hidden="true" />
             LinkedIn
@@ -249,7 +267,7 @@ const competences = [
             href="https://github.com/raphbag"
             target="_blank"
             rel="noopener noreferrer"
-            class="contact__link"
+            class="inline-flex justify-center md:justify-start items-center gap-2 py-2.5 px-5 rounded-full bg-white/5 border border-white/10 text-[#c0c0d0] font-medium text-[0.9rem] no-underline transition-[border-color,box-shadow,transform,color] duration-200 ease hover:border-[#646cff] hover:shadow-[0_0_16px_rgba(100,108,255,0.3)] hover:-translate-y-0.5 hover:text-[#e0e0e0]"
           >
             <img src="/github.svg" width="20" height="20" alt="GitHub" aria-hidden="true" />
             GitHub
@@ -261,436 +279,8 @@ const competences = [
 </template>
 
 <style scoped>
-/* ─── Smooth scroll ─────────────────────────────────────────── */
+/* Smooth scroll */
 :global(html) {
   scroll-behavior: smooth;
-}
-
-/* ─── Keyframes ─────────────────────────────────────────────── */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.8);
-  }
-}
-
-@keyframes scroll-line {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes border-glow {
-  0%,
-  100% {
-    box-shadow:
-      0 0 20px rgba(100, 108, 255, 0.15),
-      inset 0 0 20px rgba(100, 108, 255, 0.03);
-  }
-  50% {
-    box-shadow:
-      0 0 40px rgba(66, 184, 131, 0.2),
-      inset 0 0 30px rgba(66, 184, 131, 0.05);
-  }
-}
-
-/* ─── Home wrapper ──────────────────────────────────────────── */
-.home {
-  position: relative;
-}
-
-/* ─── Hero ──────────────────────────────────────────────────── */
-.hero {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  gap: 2rem;
-  position: relative;
-  /* transparent — laisse apparaître la scène 3D */
-}
-
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(66, 184, 131, 0.3);
-  color: #42b883;
-  font-size: 0.8rem;
-  font-family: monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  animation: fadeIn 0.6s ease both;
-}
-
-.hero__badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #42b883;
-  animation: pulse-dot 2s ease-in-out infinite;
-  flex-shrink: 0;
-}
-
-.hero__title {
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  font-weight: 800;
-  text-align: center;
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  /* gradient text */
-  background: linear-gradient(135deg, #e0e0e0 20%, #646cff 55%, #42b883 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation:
-    fadeIn 0.8s ease 0.1s both,
-    gradient-shift 6s ease infinite;
-  padding: 2rem 0;
-}
-
-.hero__subtitle {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  text-align: center;
-  margin: 0;
-  font-weight: 300;
-  color: #9a9ab0;
-  max-width: 700px;
-  line-height: 1.7;
-  animation: fadeIn 0.9s ease 0.2s both;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  animation: fadeIn 1s ease 0.35s both;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 10px;
-  padding: 0.7rem 1.4rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #e0e0e0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.2s ease;
-  text-decoration: none;
-}
-
-.hero__cta:hover {
-  transform: translateY(-2px);
-}
-
-.hero__cta--primary {
-  background: linear-gradient(135deg, rgba(100, 108, 255, 0.3), rgba(66, 184, 131, 0.2));
-  border-color: rgba(100, 108, 255, 0.5);
-}
-
-.hero__cta--primary:hover {
-  border-color: #646cff;
-  box-shadow: 0 0 20px rgba(100, 108, 255, 0.35);
-}
-
-.hero__cta--secondary {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.hero__cta--secondary:hover {
-  border-color: #42b883;
-  box-shadow: 0 0 20px rgba(66, 184, 131, 0.25);
-}
-
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.scroll-indicator__line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, rgba(100, 108, 255, 0.8), transparent);
-  animation: scroll-line 1.6s ease-in-out infinite;
-}
-
-/* ─── Compétences ───────────────────────────────────────────── */
-.competences {
-  padding: 8rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  /* semi-transparent pour laisser voir la scène 3D */
-  background: rgba(10, 10, 15, 0.15);
-  backdrop-filter: blur(5px);
-}
-
-.competences__header {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin: 0;
-  background: linear-gradient(135deg, #e0e0e0, #646cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-subtitle {
-  color: #6a6a80;
-  font-size: 0.95rem;
-  font-family: monospace;
-  letter-spacing: 0.06em;
-}
-
-.competences__group {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.competences__category {
-  font-family: monospace;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: #42b883;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(66, 184, 131, 0.15);
-}
-
-.competences__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.competence-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 1rem 0.75rem;
-  width: 110px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  text-decoration: none;
-  color: #9a9ab0;
-  font-size: 0.7rem;
-  text-align: center;
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.2s ease;
-}
-
-.competence-card:hover {
-  border-color: #646cff;
-  box-shadow: 0 0 16px rgba(100, 108, 255, 0.25);
-  transform: translateY(-3px);
-  color: #c0c0d0;
-}
-
-.competence-card img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  filter: brightness(0.9);
-  transition:
-    filter 0.25s ease,
-    transform 0.25s ease;
-}
-
-.competence-card:hover img {
-  filter: brightness(1.1);
-  transform: scale(1.05);
-}
-
-.competence-card__name {
-  line-height: 1.3;
-  word-break: break-word;
-}
-
-/* ─── Contact ───────────────────────────────────────────────── */
-.contact {
-  padding: 8rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(10, 10, 15, 0.15);
-  backdrop-filter: blur(5px);
-}
-
-.contact__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 3rem 2.5rem;
-  max-width: 720px;
-  width: 100%;
-  border-radius: 20px;
-  background: rgba(10, 10, 20, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  animation: border-glow 4s ease-in-out infinite;
-}
-
-.contact__intro {
-  text-align: center;
-  color: #6a6a80;
-  max-width: 560px;
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-.contact__links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.contact__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #c0c0d0;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.2s ease,
-    color 0.2s ease;
-}
-
-.contact__link:hover {
-  border-color: #646cff;
-  box-shadow: 0 0 16px rgba(100, 108, 255, 0.3);
-  transform: translateY(-2px);
-  color: #e0e0e0;
-}
-
-/* ─── Responsive ────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .hero {
-    padding: 0 1.25rem;
-    gap: 1.5rem;
-  }
-
-  .competences {
-    padding: 5rem 1.25rem;
-    gap: 3rem;
-  }
-
-  .contact {
-    padding: 5rem 1.25rem;
-  }
-
-  .contact__card {
-    padding: 2rem 1.5rem;
-  }
-
-  .contact__links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .contact__link {
-    justify-content: center;
-  }
-
-  .competences__grid {
-    justify-content: center;
-  }
-
-  .competence-card {
-    width: 90px;
-    padding: 0.75rem 0.5rem;
-  }
-
-  .competence-card img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__badge {
-    font-size: 0.7rem;
-  }
 }
 </style>

@@ -9,17 +9,36 @@ const goHome = () => {
 </script>
 
 <template>
-  <main class="not-found">
-    <div class="container">
-      <div class="error-code">
-        <span class="four">4</span>
-        <span class="zero">0</span>
-        <span class="four">4</span>
+  <main
+    class="min-h-[80vh] flex items-center justify-center p-8 bg-[linear-gradient(145deg,var(--vt-c-black),#161616)]"
+  >
+    <div class="text-center w-full max-w-[600px]">
+      <div
+        class="flex justify-center items-center gap-4 mb-8 text-[4rem] md:text-[5rem] lg:text-[8rem] font-bold leading-none"
+      >
+        <span
+          class="bg-[linear-gradient(45deg,#646cff,#42b883)] bg-clip-text text-transparent animate-[pulse-404_2s_ease-in-out_infinite]"
+          >4</span
+        >
+        <span class="text-[#646cff] animate-[rotate-404_3s_ease-in-out_infinite] inline-block"
+          >0</span
+        >
+        <span
+          class="bg-[linear-gradient(45deg,#646cff,#42b883)] bg-clip-text text-transparent animate-[pulse-404_2s_ease-in-out_infinite]"
+          >4</span
+        >
       </div>
-      <h1>Page introuvable</h1>
-      <p>Oups ! La page que vous recherchez n'existe pas ou a été déplacée.</p>
-      <div class="actions">
-        <button @click="goHome" class="btn-home">
+      <h1 class="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-semibold mb-4 text-[#e0e0e0]">
+        Page introuvable
+      </h1>
+      <p class="text-[1rem] lg:text-[1.2rem] text-[#d6d6d6] mb-8 leading-[1.6]">
+        Oups ! La page que vous recherchez n'existe pas ou a été déplacée.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center flex-wrap">
+        <button
+          @click="goHome"
+          class="inline-flex justify-center items-center gap-2 py-3 px-6 rounded-[10px] text-[1rem] font-medium no-underline transition-all duration-300 cursor-pointer border-none font-inherit bg-[linear-gradient(45deg,#646cff,#42b883)] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(100,108,255,0.4)] w-full md:w-auto"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -42,92 +61,7 @@ const goHome = () => {
 </template>
 
 <style scoped>
-.not-found {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(145deg, var(--vt-c-black), #161616);
-}
-
-.container {
-  text-align: center;
-  max-width: 600px;
-}
-
-.error-code {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  font-size: 8rem;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.four {
-  background: linear-gradient(45deg, #646cff, #42b883);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.zero {
-  color: #646cff;
-  animation: rotate 3s ease-in-out infinite;
-  display: inline-block;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #e0e0e0;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #d6d6d6;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-home {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-}
-
-.btn-home {
-  background: linear-gradient(45deg, #646cff, #42b883);
-  color: white;
-}
-
-.btn-home:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(100, 108, 255, 0.4);
-}
-
-@keyframes pulse {
+@keyframes pulse-404 {
   0%,
   100% {
     opacity: 1;
@@ -137,48 +71,13 @@ p {
   }
 }
 
-@keyframes rotate {
+@keyframes rotate-404 {
   0%,
   100% {
     transform: rotate(0deg);
   }
   50% {
     transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .error-code {
-    font-size: 5rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-home,
-  .btn-projects {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .error-code {
-    font-size: 4rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
   }
 }
 </style>
