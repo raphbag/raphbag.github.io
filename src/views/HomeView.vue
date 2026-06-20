@@ -211,8 +211,7 @@ const competences = [
       <div class="contact__card">
         <h2 id="contact-title" class="section-title">Me contacter</h2>
         <p class="contact__intro">
-          Une opportunité d'alternance, une question ou simplement envie d'échanger ? N'hésitez pas
-          à me contacter.
+          Une question ou simplement envie d'échanger ? N'hésitez pas à me contacter.
         </p>
         <div class="contact__links">
           <a
