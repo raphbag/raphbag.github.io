@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <div
-    class="absolute top-0 left-0 w-full z-[100] flex justify-center bg-[#0a0a0f]/40 backdrop-blur-md border-b border-white/5"
+    class="absolute top-0 left-0 w-full z-[100] flex justify-center bg-background/40 backdrop-blur-md border-b border-white/5"
   >
     <header class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 py-2">
       <RouterLink to="/" aria-label="Accueil - Raphael Baguelin" class="flex items-center">

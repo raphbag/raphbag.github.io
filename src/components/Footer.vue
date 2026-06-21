@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-auto bg-[#0a0a0f]/60 backdrop-blur-md border-t border-white/5">
+  <div class="w-full flex justify-center bg-background/60 backdrop-blur-md border-t border-white/5">
     <footer
       class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 px-5 py-5 sm:px-8 sm:py-6 max-w-7xl mx-auto"
     >
